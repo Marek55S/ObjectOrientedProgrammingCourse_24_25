@@ -6,17 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OptionParser {
-    public static MoveDirection[] directionparser(String[] args) {
+    public static MoveDirection[] parsedirection(String[] stringdirections) {
         List<MoveDirection> directions = new ArrayList<>();
-        for (String arg : args) {
-            try{
-            MoveDirection direction = MoveDirection.valueOf(arg);
-            directions.add(direction);
-            } catch (IllegalArgumentException e) {
-                System.out.println(arg + " is not a valid move direction");
-                throw new RuntimeException(e);
+        for (String direction : stringdirections) {
+            switch (direction) {
+                case "f" -> directions.add(MoveDirection.forward);
+                case "b" -> directions.add(MoveDirection.backward);
+                case "l" -> directions.add(MoveDirection.left);
+                case "r" -> directions.add(MoveDirection.right);
+                default -> throw new IllegalArgumentException("Invalid direction: " + direction);
             }
-        }
+            }
         return directions.toArray(new MoveDirection[0]);
     }
 }
