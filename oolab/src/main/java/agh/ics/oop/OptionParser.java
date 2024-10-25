@@ -14,7 +14,7 @@ public class OptionParser {
                 case "b" -> directions.add(MoveDirection.backward);
                 case "l" -> directions.add(MoveDirection.left);
                 case "r" -> directions.add(MoveDirection.right);
-                default -> throw new IllegalArgumentException("Invalid direction: " + direction);
+                default -> {}
             }
             }
         return directions.toArray(new MoveDirection[0]);
