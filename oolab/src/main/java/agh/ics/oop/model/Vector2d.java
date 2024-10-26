@@ -8,10 +8,10 @@ public class Vector2d {
         this.x = x;
         this.y = y;
     }
-    private int getX(){
+    public int getX(){
         return x;
     }
-    private int getY(){
+    public int getY(){
         return y;
     }
     public String toString(){
@@ -26,7 +26,7 @@ public class Vector2d {
     public Vector2d add(Vector2d other){
         return new Vector2d(x+other.getX(),y+other.getY());
     }
-    public Vector2d substract(Vector2d other){
+    public Vector2d subtract(Vector2d other){
         return new Vector2d(x-other.getX(),y-other.getY());
     }
     public Vector2d upperRight(Vector2d other){
@@ -38,12 +38,12 @@ public class Vector2d {
     public Vector2d opposite(){
         return new Vector2d(-x,-y);
     }
+
     @Override
     public boolean equals(Object other){
         if (this == other) return true;
 
-        if (!(other instanceof Vector2d) ) return false;
-        Vector2d that = (Vector2d) other;
+        if (!(other instanceof Vector2d that) ) return false;
         return x==that.getX() && y==that.getY();
     }
     // jako mnożnik w funkcji hashującej wziąłem relatywnie dużą liczbę pierwszą

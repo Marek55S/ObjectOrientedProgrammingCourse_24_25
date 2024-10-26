@@ -25,9 +25,9 @@ public enum MapDirection {
     public MapDirection previous(){
         return switch(this){
             case NORTH -> WEST;
-            case EAST -> SOUTH;
+            case EAST -> NORTH;
             case SOUTH -> EAST;
-            case WEST -> NORTH;
+            case WEST -> SOUTH;
         };
     }
     public Vector2d toUnitVector(){

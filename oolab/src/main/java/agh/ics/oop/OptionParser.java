@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OptionParser {
-    public static MoveDirection[] parsedirection(String[] stringdirections) {
+    public static MoveDirection[] parseDirection(String[] stringDirections) {
         List<MoveDirection> directions = new ArrayList<>();
-        for (String direction : stringdirections) {
+        for (String direction : stringDirections) {
             switch (direction) {
-                case "f" -> directions.add(MoveDirection.forward);
-                case "b" -> directions.add(MoveDirection.backward);
-                case "l" -> directions.add(MoveDirection.left);
-                case "r" -> directions.add(MoveDirection.right);
+                case "f" -> directions.add(MoveDirection.FORWARD);
+                case "b" -> directions.add(MoveDirection.BACKWARD);
+                case "l" -> directions.add(MoveDirection.LEFT);
+                case "r" -> directions.add(MoveDirection.RIGHT);
                 default -> {}
             }
             }
