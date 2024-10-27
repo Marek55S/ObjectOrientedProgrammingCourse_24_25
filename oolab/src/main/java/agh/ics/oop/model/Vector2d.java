@@ -1,5 +1,7 @@
 package agh.ics.oop.model;
 
+import java.util.Objects;
+
 public class Vector2d {
     private final int x;
     private final int y;
@@ -46,9 +48,9 @@ public class Vector2d {
         if (!(other instanceof Vector2d that) ) return false;
         return x==that.getX() && y==that.getY();
     }
-    // jako mnożnik w funkcji hashującej wziąłem relatywnie dużą liczbę pierwszą
+
     @Override
     public int hashCode(){
-        return 2137*x+y;
+        return Objects.hash(x,y);
     }
 }
