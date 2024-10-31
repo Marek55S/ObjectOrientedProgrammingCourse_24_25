@@ -9,9 +9,9 @@ public class Animal {
         position = new Vector2d(2,2);
     }
 
-
-
+    // sprawdz czy da sie lepiej zrobic te 2 konstruktory
     public Animal(MapDirection orientation, Vector2d position){
+        this();
         this.orientation = orientation;
         this.position = position;
     }
@@ -23,6 +23,16 @@ public class Animal {
 
     public boolean isAt(Vector2d position){
         return this.position.equals(position);
+    }
+// zabezpiecz przed wyjsciem za mape
+    public void move(MoveDirection direction) {
+        switch (direction) {
+            case RIGHT -> orientation.next();
+            case LEFT -> orientation.previous();
+            case FORWARD -> position.add(orientation.toUnitVector());
+            case BACKWARD -> position.subtract(orientation.toUnitVector());
+
+        }
     }
 
 
