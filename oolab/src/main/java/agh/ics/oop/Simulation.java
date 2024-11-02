@@ -18,6 +18,10 @@ public class Simulation {
         movesList = moves;
     }
 
+    public List<Animal> getAnimalsList() {
+        return animalsList;
+    }
+
     public void run(){
         int numberOfAnimals = animalsList.size();
         for(int i = 0;i<movesList.size();i++){
@@ -26,4 +30,5 @@ public class Simulation {
             System.out.printf("Zwierzę %d : %s%n", animalNumber, animalsList.get(animalNumber).getPosition().toString());
         }
     }
+
 }

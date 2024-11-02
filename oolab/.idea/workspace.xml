@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03e5a723-f2a5-418f-a2bf-e6d23360c821" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/AnimalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/SimulationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
@@ -14,15 +14,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/OptionParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/OptionsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/OptionsParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/agh/ics/oop/OptionParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/OptionParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +92,8 @@
     "Gradle.OptionParserTest.executor": "Run",
     "Gradle.OptionParserTest.parseDirectionAllValidDirections.executor": "Run",
     "Gradle.OptionsParserTest.executor": "Run",
+    "Gradle.SimulationTest.executor": "Run",
+    "Gradle.SimulationTest.simulationMultiAnimal.executor": "Run",
     "Gradle.Vector2dTest.addPositiveNegativeMixedAndZero.executor": "Run",
     "Gradle.Vector2dTest.equalsCases.executor": "Run",
     "Gradle.Vector2dTest.equalsFourCases.executor": "Run",
@@ -134,11 +129,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="agh.ics.oop.model" />
       <recent name="agh.ics.oop" />
+      <recent name="agh.ics.oop.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AnimalTest.moveBackwardBorders">
+  <component name="RunManager" selected="Gradle.SimulationTest.simulationMultiAnimal">
     <configuration name="AnimalTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -211,7 +206,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AnimalTest.moveForwardBorders" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SimulationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -224,7 +219,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.model.AnimalTest.moveForwardBorders&quot;" />
+            <option value="&quot;agh.ics.oop.SimulationTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -235,7 +230,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AnimalTest.moveForwardDefault" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SimulationTest.simulationMultiAnimal" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -248,7 +243,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.model.AnimalTest.moveForwardDefault&quot;" />
+            <option value="&quot;agh.ics.oop.SimulationTest.simulationMultiAnimal&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -260,19 +255,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.SimulationTest" />
+      <item itemvalue="Gradle.SimulationTest.simulationMultiAnimal" />
       <item itemvalue="Gradle.AnimalTest" />
       <item itemvalue="Gradle.AnimalTest.moveBackwardBorders" />
       <item itemvalue="Gradle.AnimalTest.moveBackwardDefault" />
-      <item itemvalue="Gradle.AnimalTest.moveForwardBorders" />
-      <item itemvalue="Gradle.AnimalTest.moveForwardDefault" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.SimulationTest.simulationMultiAnimal" />
+        <item itemvalue="Gradle.SimulationTest" />
         <item itemvalue="Gradle.AnimalTest.moveBackwardBorders" />
         <item itemvalue="Gradle.AnimalTest.moveBackwardDefault" />
         <item itemvalue="Gradle.AnimalTest" />
-        <item itemvalue="Gradle.AnimalTest.moveForwardBorders" />
-        <item itemvalue="Gradle.AnimalTest.moveForwardDefault" />
       </list>
     </recent_temporary>
   </component>
@@ -307,7 +302,8 @@
       <workItem from="1730387966355" duration="1084000" />
       <workItem from="1730507782287" duration="1228000" />
       <workItem from="1730545007212" duration="7688000" />
-      <workItem from="1730566071387" duration="8909000" />
+      <workItem from="1730566071387" duration="8999000" />
+      <workItem from="1730585222338" duration="3293000" />
     </task>
     <servers />
   </component>
