@@ -11,27 +11,40 @@ public class Animal {
         position = new Vector2d(2,2);
     }
 
-    public Animal(MapDirection orientation, Vector2d position){
+    public Animal(Vector2d position){
         this();
         this.position = position;
     }
 
+    public Vector2d getPosition() {
+        return this.position;
+    }
+
+    public MapDirection getOrientation() {
+        return this.orientation;
+    }
+
     @Override
     public String toString(){
-        return "orientation=%s, position=%s".formatted(orientation.toString(), position.toString());
+        return "kierunek: %s, pozycja: %s".formatted(orientation.toString(), position.toString());
     }
 
     public boolean isAt(Vector2d position){
         return this.position.equals(position);
     }
+
     public void move(MoveDirection direction) {
         switch (direction) {
             case RIGHT -> orientation = orientation.next();
             case LEFT -> orientation = orientation.previous();
-            case FORWARD -> position.lowerLeft(lowerLeftMapCorner);
-            case BACKWARD -> position.upperRight(lowerLeftMapCorner);
+            case FORWARD ->{
+                position = position.add(orientation.toUnitVector());
+                position = position.lowerLeft(upperRightMapCorner).upperRight(lowerLeftMapCorner);
+            }
+            case BACKWARD ->{
+                position = position.subtract(orientation.toUnitVector());
+                position = position.lowerLeft(upperRightMapCorner).upperRight(lowerLeftMapCorner);
+            }
         }
     }
-
-
 }

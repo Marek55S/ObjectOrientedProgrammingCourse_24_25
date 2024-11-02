@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OptionsParser {
-    public static MoveDirection[] parseDirection(String[] stringDirections) {
+    public static List<MoveDirection> parseDirection(String[] stringDirections) {
         List<MoveDirection> directions = new ArrayList<>();
         for (String direction : stringDirections) {
             switch (direction) {
@@ -17,6 +17,6 @@ public class OptionsParser {
                 default -> {}
             }
             }
-        return directions.toArray(new MoveDirection[0]);
+        return directions;
     }
 }
