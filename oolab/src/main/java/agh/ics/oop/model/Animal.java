@@ -33,16 +33,20 @@ public class Animal {
         return this.position.equals(position);
     }
 
+    // zmien case dla forward i backward
+    // nowy wektor z potencjalna pozycja i sprawdzenie czy mozna go bezpiecznie przypisac
     public void move(MoveDirection direction) {
         switch (direction) {
             case RIGHT -> orientation = orientation.next();
             case LEFT -> orientation = orientation.previous();
             case FORWARD ->{
                 position = position.add(orientation.toUnitVector());
+                if (!position.follows(UPPER_RIGHT_MAP_CORNER)){ position = position.lowerLeft(UPPER_RIGHT_MAP_CORNER); }
+                else if (!position.precedes(LOWER_LEFT_MAP_CORNER)){position = po}
                 position = position.lowerLeft(UPPER_RIGHT_MAP_CORNER).upperRight(LOWER_LEFT_MAP_CORNER);
             }
             case BACKWARD ->{
-                position = position.subtract(orientation.toUnitVector());
+                Vector2d new_position = new position.subtract(orientation.toUnitVector());
                 position = position.lowerLeft(UPPER_RIGHT_MAP_CORNER).upperRight(LOWER_LEFT_MAP_CORNER);
             }
         }
