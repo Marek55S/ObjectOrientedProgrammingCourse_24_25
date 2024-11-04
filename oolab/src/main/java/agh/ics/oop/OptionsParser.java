@@ -5,8 +5,8 @@ import agh.ics.oop.model.MoveDirection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OptionParser {
-    public static MoveDirection[] parseDirection(String[] stringDirections) {
+public class OptionsParser {
+    public static List<MoveDirection> parseDirection(String[] stringDirections) {
         List<MoveDirection> directions = new ArrayList<>();
         for (String direction : stringDirections) {
             switch (direction) {
@@ -17,6 +17,6 @@ public class OptionParser {
                 default -> {}
             }
             }
-        return directions.toArray(new MoveDirection[0]);
+        return directions;
     }
 }
