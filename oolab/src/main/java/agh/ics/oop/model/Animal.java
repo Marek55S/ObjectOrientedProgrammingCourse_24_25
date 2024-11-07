@@ -40,14 +40,16 @@ public class Animal {
             case RIGHT -> orientation = orientation.next();
             case LEFT -> orientation = orientation.previous();
             case FORWARD ->{
-                position = position.add(orientation.toUnitVector());
-                if (!position.follows(UPPER_RIGHT_MAP_CORNER)){ position = position.lowerLeft(UPPER_RIGHT_MAP_CORNER); }
-                else if (!position.precedes(LOWER_LEFT_MAP_CORNER)){position = po}
-                position = position.lowerLeft(UPPER_RIGHT_MAP_CORNER).upperRight(LOWER_LEFT_MAP_CORNER);
+                Vector2d newPosition = position.add(orientation.toUnitVector());
+                if(newPosition.precedes(UPPER_RIGHT_MAP_CORNER)&& newPosition.follows(LOWER_LEFT_MAP_CORNER)){
+                    position = newPosition;
+                }
             }
             case BACKWARD ->{
-                Vector2d new_position = new position.subtract(orientation.toUnitVector());
-                position = position.lowerLeft(UPPER_RIGHT_MAP_CORNER).upperRight(LOWER_LEFT_MAP_CORNER);
+                Vector2d newPosition = position.subtract(orientation.toUnitVector());
+                if(newPosition.precedes(UPPER_RIGHT_MAP_CORNER)&& newPosition.follows(LOWER_LEFT_MAP_CORNER)){
+                position = newPosition;
+                }
             }
         }
     }

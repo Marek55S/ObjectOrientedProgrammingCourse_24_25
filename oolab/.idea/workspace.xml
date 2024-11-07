@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03e5a723-f2a5-418f-a2bf-e6d23360c821" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/Animal.java" afterDir="false" />
     </list>
@@ -124,7 +125,7 @@
       <recent name="agh.ics.oop.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SimulationTest.simulationMultiAnimal">
+  <component name="RunManager" selected="Gradle.SimulationTest">
     <configuration name="AnimalTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -254,11 +255,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.SimulationTest.simulationMultiAnimal" />
         <item itemvalue="Gradle.SimulationTest" />
+        <item itemvalue="Gradle.AnimalTest" />
+        <item itemvalue="Gradle.SimulationTest.simulationMultiAnimal" />
         <item itemvalue="Gradle.AnimalTest.moveBackwardBorders" />
         <item itemvalue="Gradle.AnimalTest.moveBackwardDefault" />
-        <item itemvalue="Gradle.AnimalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -296,6 +297,7 @@
       <workItem from="1730566071387" duration="8999000" />
       <workItem from="1730585222338" duration="3293000" />
       <workItem from="1730727001130" duration="671000" />
+      <workItem from="1731012097126" duration="1708000" />
     </task>
     <servers />
   </component>
