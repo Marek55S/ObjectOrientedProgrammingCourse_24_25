@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03e5a723-f2a5-418f-a2bf-e6d23360c821" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/RectangularMapTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/TextMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/WorldNumberPositionMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/TextMapTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
@@ -19,15 +22,10 @@
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Simulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/MapDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/MapDirection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/MoveValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/MoveValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/RectangularMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/RectangularMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/WorldMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/util/MapVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/util/MapVisualizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/agh/ics/oop/SimulationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/SimulationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/AnimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/AnimalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/MapDirectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/MapDirectionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +62,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
         <option value="JUnit5 Test Class" />
       </list>
     </option>
@@ -106,6 +105,7 @@
     "Gradle.OptionParserTest.parseDirectionAllValidDirections.executor": "Run",
     "Gradle.OptionsParserTest.executor": "Run",
     "Gradle.RectangularMapTest.CanMoveToTest.executor": "Run",
+    "Gradle.RectangularMapTest.executor": "Run",
     "Gradle.RectangularMapTest.firstBasicTest.executor": "Run",
     "Gradle.RectangularMapTest.isInMapBoundsTest.executor": "Run",
     "Gradle.RectangularMapTest.isOccupiedTest.executor": "Run",
@@ -114,6 +114,13 @@
     "Gradle.RectangularMapTest.placeTest.executor": "Run",
     "Gradle.SimulationTest.executor": "Run",
     "Gradle.SimulationTest.simulationMultiAnimal.executor": "Run",
+    "Gradle.TextMapTest.PlaceTest.executor": "Run",
+    "Gradle.TextMapTest.canMoveToTest.executor": "Run",
+    "Gradle.TextMapTest.initTextMap.executor": "Run",
+    "Gradle.TextMapTest.isOccupiedTest.executor": "Run",
+    "Gradle.TextMapTest.moveBackwardLeftTest.executor": "Run",
+    "Gradle.TextMapTest.moveForwardRightTest.executor": "Run",
+    "Gradle.TextMapTest.objectAtTest.executor": "Run",
     "Gradle.Vector2dTest.addPositiveNegativeMixedAndZero.executor": "Run",
     "Gradle.Vector2dTest.equalsCases.executor": "Run",
     "Gradle.Vector2dTest.equalsFourCases.executor": "Run",
@@ -130,7 +137,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "lab4",
+    "git-widget-placeholder": "lab4-bonus",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/work/studia/sem3/PO/PO_2024_PN_1315_SWAKON/oolab",
     "node.js.detected.package.eslint": "true",
@@ -153,8 +160,8 @@
       <recent name="agh.ics.oop" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.RectangularMapTest.isInMapBoundsTest">
-    <configuration name="RectangularMapTest.isInMapBoundsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.TextMapTest.moveBackwardLeftTest">
+    <configuration name="TextMapTest.canMoveToTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -167,7 +174,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.model.RectangularMapTest.isInMapBoundsTest&quot;" />
+            <option value="&quot;agh.ics.oop.model.TextMapTest.canMoveToTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -178,7 +185,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RectangularMapTest.isOccupiedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TextMapTest.isOccupiedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -191,7 +198,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.model.RectangularMapTest.isOccupiedTest&quot;" />
+            <option value="&quot;agh.ics.oop.model.TextMapTest.isOccupiedTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -202,7 +209,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RectangularMapTest.moveTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TextMapTest.moveBackwardLeftTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -215,7 +222,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.model.RectangularMapTest.moveTest&quot;" />
+            <option value="&quot;agh.ics.oop.model.TextMapTest.moveBackwardLeftTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -226,7 +233,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RectangularMapTest.objectAtTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TextMapTest.moveForwardRightTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -239,7 +246,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.model.RectangularMapTest.objectAtTest&quot;" />
+            <option value="&quot;agh.ics.oop.model.TextMapTest.moveForwardRightTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -250,7 +257,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RectangularMapTest.placeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TextMapTest.objectAtTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -263,7 +270,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.model.RectangularMapTest.placeTest&quot;" />
+            <option value="&quot;agh.ics.oop.model.TextMapTest.objectAtTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -275,19 +282,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.RectangularMapTest.isInMapBoundsTest" />
-      <item itemvalue="Gradle.RectangularMapTest.isOccupiedTest" />
-      <item itemvalue="Gradle.RectangularMapTest.moveTest" />
-      <item itemvalue="Gradle.RectangularMapTest.objectAtTest" />
-      <item itemvalue="Gradle.RectangularMapTest.placeTest" />
+      <item itemvalue="Gradle.TextMapTest.canMoveToTest" />
+      <item itemvalue="Gradle.TextMapTest.isOccupiedTest" />
+      <item itemvalue="Gradle.TextMapTest.moveBackwardLeftTest" />
+      <item itemvalue="Gradle.TextMapTest.moveForwardRightTest" />
+      <item itemvalue="Gradle.TextMapTest.objectAtTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.RectangularMapTest.isInMapBoundsTest" />
-        <item itemvalue="Gradle.RectangularMapTest.objectAtTest" />
-        <item itemvalue="Gradle.RectangularMapTest.isOccupiedTest" />
-        <item itemvalue="Gradle.RectangularMapTest.moveTest" />
-        <item itemvalue="Gradle.RectangularMapTest.placeTest" />
+        <item itemvalue="Gradle.TextMapTest.moveBackwardLeftTest" />
+        <item itemvalue="Gradle.TextMapTest.moveForwardRightTest" />
+        <item itemvalue="Gradle.TextMapTest.objectAtTest" />
+        <item itemvalue="Gradle.TextMapTest.isOccupiedTest" />
+        <item itemvalue="Gradle.TextMapTest.canMoveToTest" />
       </list>
     </recent_temporary>
   </component>
@@ -329,6 +336,7 @@
       <workItem from="1731086622731" duration="2057000" />
       <workItem from="1731111539346" duration="296000" />
       <workItem from="1731181475188" duration="16310000" />
+      <workItem from="1731255865456" duration="14832000" />
     </task>
     <servers />
   </component>

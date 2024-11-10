@@ -1,29 +1,26 @@
 package agh.ics.oop;
 
-import agh.ics.oop.model.Animal;
 import agh.ics.oop.model.MoveDirection;
-import agh.ics.oop.model.Vector2d;
 import agh.ics.oop.model.WorldMap;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Simulation {
-    private final List<Animal> animalsList = new ArrayList<>();
-    private List<MoveDirection> movesList;
-    private final WorldMap map;
+public class Simulation<T,P> {
+    private final List<T> animalsList = new ArrayList<>();
+    private final List<MoveDirection> movesList;
+    private final WorldMap<T,P> map;
 
-    public Simulation(List<Vector2d> startingPositions, List<MoveDirection>moves, WorldMap newMap) {
+    public Simulation(List<T> animalsList, List<MoveDirection>moves, WorldMap<T,P> newMap) {
         map = newMap;
         movesList = moves;
-        for (Vector2d startingPosition : startingPositions) {
-            Animal newAnimal = new Animal(startingPosition);
-            animalsList.add(newAnimal);
-            map.place(newAnimal);
+        this.animalsList.addAll(animalsList);
+        for (T animal : animalsList) {
+            map.place(animal);
         }
     }
 
-    protected List<Animal> getAnimalsList() {
+    protected List<T> getAnimalsList() {
         return animalsList;
     }
 
