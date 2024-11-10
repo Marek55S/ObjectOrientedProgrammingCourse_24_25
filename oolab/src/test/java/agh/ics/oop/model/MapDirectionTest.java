@@ -18,10 +18,10 @@ class MapDirectionTest {
         MapDirection directionWest = MapDirection.WEST;
 
         //then
-        assertEquals("Północ", directionNorth.toString());
-        assertEquals("Wschód", directionEast.toString());
-        assertEquals("Południe", directionSouth.toString());
-        assertEquals("Zachód", directionWest.toString());
+        assertEquals("N", directionNorth.toString());
+        assertEquals("E", directionEast.toString());
+        assertEquals("S", directionSouth.toString());
+        assertEquals("W", directionWest.toString());
     }
 
     @Test

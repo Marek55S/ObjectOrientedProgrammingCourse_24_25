@@ -26,28 +26,27 @@ public class Animal {
 
     @Override
     public String toString(){
-        return "kierunek: %s, pozycja: %s".formatted(orientation.toString(), position.toString());
+        return orientation.toString();
     }
 
     public boolean isAt(Vector2d position){
         return this.position.equals(position);
     }
 
-    // zmien case dla forward i backward
-    // nowy wektor z potencjalna pozycja i sprawdzenie czy mozna go bezpiecznie przypisac
-    public void move(MoveDirection direction) {
+
+    public void move(MoveDirection direction, MoveValidator validator) {
         switch (direction) {
             case RIGHT -> orientation = orientation.next();
             case LEFT -> orientation = orientation.previous();
             case FORWARD ->{
                 Vector2d newPosition = position.add(orientation.toUnitVector());
-                if(newPosition.precedes(UPPER_RIGHT_MAP_CORNER)&& newPosition.follows(LOWER_LEFT_MAP_CORNER)){
+                if(validator.canMoveTo(newPosition)){
                     position = newPosition;
                 }
             }
             case BACKWARD ->{
                 Vector2d newPosition = position.subtract(orientation.toUnitVector());
-                if(newPosition.precedes(UPPER_RIGHT_MAP_CORNER)&& newPosition.follows(LOWER_LEFT_MAP_CORNER)){
+                if(validator.canMoveTo(newPosition)){
                 position = newPosition;
                 }
             }
