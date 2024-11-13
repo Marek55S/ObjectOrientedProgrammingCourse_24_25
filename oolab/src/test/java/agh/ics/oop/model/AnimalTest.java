@@ -33,7 +33,7 @@ class AnimalTest {
         //when
         Animal animal = new Animal(new Vector2d(3,0));
         //then
-        assertEquals("kierunek: Północ, pozycja: (3,0)", animal.toString());
+        assertEquals("N", animal.toString());
     }
 
     @Test
@@ -49,15 +49,16 @@ class AnimalTest {
     void moveRotationLeft(){
         //given
         Animal animal = new Animal();
+        WorldMap map = new RectangularMap(5,5);
         //when
         MapDirection noRotation = animal.getOrientation();
-        animal.move(MoveDirection.LEFT);
+        animal.move(MoveDirection.LEFT,map);
         MapDirection oneRotation = animal.getOrientation();
-        animal.move(MoveDirection.LEFT);
+        animal.move(MoveDirection.LEFT,map);
         MapDirection twoRotation = animal.getOrientation();
-        animal.move(MoveDirection.LEFT);
+        animal.move(MoveDirection.LEFT,map);
         MapDirection threeRotation = animal.getOrientation();
-        animal.move(MoveDirection.LEFT);
+        animal.move(MoveDirection.LEFT,map);
         MapDirection fourRotation = animal.getOrientation();
         //then
         assertEquals(MapDirection.NORTH,noRotation);
@@ -71,15 +72,16 @@ class AnimalTest {
     void moveRotationRight(){
         //given
         Animal animal = new Animal();
+        WorldMap map = new RectangularMap(5,5);
         //when
         MapDirection noRotation = animal.getOrientation();
-        animal.move(MoveDirection.RIGHT);
+        animal.move(MoveDirection.RIGHT,map);
         MapDirection oneRotation = animal.getOrientation();
-        animal.move(MoveDirection.RIGHT);
+        animal.move(MoveDirection.RIGHT,map);
         MapDirection twoRotation = animal.getOrientation();
-        animal.move(MoveDirection.RIGHT);
+        animal.move(MoveDirection.RIGHT,map);
         MapDirection threeRotation = animal.getOrientation();
-        animal.move(MoveDirection.RIGHT);
+        animal.move(MoveDirection.RIGHT,map);
         MapDirection fourRotation = animal.getOrientation();
         //then
         assertEquals(MapDirection.NORTH,noRotation);
@@ -93,17 +95,18 @@ class AnimalTest {
     void moveForwardDefault(){
         //given
         Animal animalDefault = new Animal();
+        WorldMap map = new RectangularMap(5,5);
         //when
-        animalDefault.move(MoveDirection.FORWARD);
+        animalDefault.move(MoveDirection.FORWARD,map);
         Vector2d northForward = animalDefault.getPosition();
-        animalDefault.move(MoveDirection.RIGHT);
-        animalDefault.move(MoveDirection.FORWARD);
+        animalDefault.move(MoveDirection.RIGHT,map);
+        animalDefault.move(MoveDirection.FORWARD,map);
         Vector2d eastForward = animalDefault.getPosition();
-        animalDefault.move(MoveDirection.RIGHT);
-        animalDefault.move(MoveDirection.FORWARD);
+        animalDefault.move(MoveDirection.RIGHT,map);
+        animalDefault.move(MoveDirection.FORWARD,map);
         Vector2d southForward = animalDefault.getPosition();
-        animalDefault.move(MoveDirection.RIGHT);
-        animalDefault.move(MoveDirection.FORWARD);
+        animalDefault.move(MoveDirection.RIGHT,map);
+        animalDefault.move(MoveDirection.FORWARD,map);
         Vector2d westForward = animalDefault.getPosition();
         //then
         assertEquals(new Vector2d(2,3),northForward);
@@ -119,21 +122,22 @@ class AnimalTest {
         Animal eastAnimal = new Animal(upperRight);
         Animal southAnimal = new Animal(lowerLeft);
         Animal westAnimal = new Animal(lowerLeft);
+        WorldMap map = new RectangularMap(5,5);
         //when
-        northAnimal.move(MoveDirection.FORWARD);
+        northAnimal.move(MoveDirection.FORWARD,map);
         Vector2d northAnimalPosition = northAnimal.getPosition();
 
-        eastAnimal.move(MoveDirection.RIGHT);
-        eastAnimal.move(MoveDirection.FORWARD);
+        eastAnimal.move(MoveDirection.RIGHT,map);
+        eastAnimal.move(MoveDirection.FORWARD,map);
         Vector2d eastAnimalPosition = eastAnimal.getPosition();
 
-        southAnimal.move(MoveDirection.RIGHT);
-        southAnimal.move(MoveDirection.RIGHT);
-        southAnimal.move(MoveDirection.FORWARD);
+        southAnimal.move(MoveDirection.RIGHT,map);
+        southAnimal.move(MoveDirection.RIGHT,map);
+        southAnimal.move(MoveDirection.FORWARD,map);
         Vector2d southAnimalPosition = southAnimal.getPosition();
 
-        westAnimal.move(MoveDirection.LEFT);
-        westAnimal.move(MoveDirection.FORWARD);
+        westAnimal.move(MoveDirection.LEFT,map);
+        westAnimal.move(MoveDirection.FORWARD,map);
         Vector2d westAnimalPosition = westAnimal.getPosition();
 
         //then
@@ -147,17 +151,18 @@ class AnimalTest {
     void moveBackwardDefault(){
         //given
         Animal animalDefault = new Animal();
+        WorldMap map = new RectangularMap(5,5);
         //when
-        animalDefault.move(MoveDirection.BACKWARD);
+        animalDefault.move(MoveDirection.BACKWARD,map);
         Vector2d northBackward = animalDefault.getPosition();
-        animalDefault.move(MoveDirection.RIGHT);
-        animalDefault.move(MoveDirection.BACKWARD);
+        animalDefault.move(MoveDirection.RIGHT,map);
+        animalDefault.move(MoveDirection.BACKWARD,map);
         Vector2d eastBackward = animalDefault.getPosition();
-        animalDefault.move(MoveDirection.RIGHT);
-        animalDefault.move(MoveDirection.BACKWARD);
+        animalDefault.move(MoveDirection.RIGHT,map);
+        animalDefault.move(MoveDirection.BACKWARD,map);
         Vector2d southBackward = animalDefault.getPosition();
-        animalDefault.move(MoveDirection.RIGHT);
-        animalDefault.move(MoveDirection.BACKWARD);
+        animalDefault.move(MoveDirection.RIGHT,map);
+        animalDefault.move(MoveDirection.BACKWARD,map);
         Vector2d westBackward = animalDefault.getPosition();
         //then
         assertEquals(new Vector2d(2,1),northBackward);
@@ -173,21 +178,22 @@ class AnimalTest {
         Animal eastAnimal = new Animal(lowerLeft);
         Animal southAnimal = new Animal(upperRight);
         Animal westAnimal = new Animal(upperRight);
+        WorldMap map = new RectangularMap(5,5);
         //when
-        northAnimal.move(MoveDirection.BACKWARD);
+        northAnimal.move(MoveDirection.BACKWARD,map);
         Vector2d northAnimalPosition = northAnimal.getPosition();
 
-        eastAnimal.move(MoveDirection.RIGHT);
-        eastAnimal.move(MoveDirection.BACKWARD);
+        eastAnimal.move(MoveDirection.RIGHT,map);
+        eastAnimal.move(MoveDirection.BACKWARD,map);
         Vector2d eastAnimalPosition = eastAnimal.getPosition();
 
-        southAnimal.move(MoveDirection.RIGHT);
-        southAnimal.move(MoveDirection.RIGHT);
-        southAnimal.move(MoveDirection.BACKWARD);
+        southAnimal.move(MoveDirection.RIGHT,map);
+        southAnimal.move(MoveDirection.RIGHT,map);
+        southAnimal.move(MoveDirection.BACKWARD,map);
         Vector2d southAnimalPosition = southAnimal.getPosition();
 
-        westAnimal.move(MoveDirection.LEFT);
-        westAnimal.move(MoveDirection.BACKWARD);
+        westAnimal.move(MoveDirection.LEFT,map);
+        westAnimal.move(MoveDirection.BACKWARD,map);
         Vector2d westAnimalPosition = westAnimal.getPosition();
 
         //then
