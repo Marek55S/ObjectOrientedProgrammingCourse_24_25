@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03e5a723-f2a5-418f-a2bf-e6d23360c821" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/Grass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/GrassField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/WorldElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/RectangularMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/RectangularMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/WorldMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +48,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -110,7 +116,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "lab5",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/work/studia/sem3/PO/PO_2024_PN_1315_SWAKON/oolab",
     "node.js.detected.package.eslint": "true",
@@ -263,11 +269,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.RectangularMapTest.isInMapBoundsTest" />
-        <item itemvalue="Gradle.RectangularMapTest.objectAtTest" />
-        <item itemvalue="Gradle.RectangularMapTest.isOccupiedTest" />
-        <item itemvalue="Gradle.RectangularMapTest.moveTest" />
         <item itemvalue="Gradle.RectangularMapTest.placeTest" />
+        <item itemvalue="Gradle.RectangularMapTest.objectAtTest" />
+        <item itemvalue="Gradle.RectangularMapTest.moveTest" />
+        <item itemvalue="Gradle.RectangularMapTest.isOccupiedTest" />
+        <item itemvalue="Gradle.RectangularMapTest.isInMapBoundsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -309,7 +315,7 @@
       <workItem from="1731086622731" duration="2057000" />
       <workItem from="1731111539346" duration="296000" />
       <workItem from="1731181475188" duration="16310000" />
-      <workItem from="1731501941002" duration="1382000" />
+      <workItem from="1731501941002" duration="3512000" />
     </task>
     <servers />
   </component>

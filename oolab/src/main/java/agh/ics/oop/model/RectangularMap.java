@@ -43,6 +43,7 @@ public class RectangularMap implements WorldMap{
         return animals.containsKey(position);
     }
 
+    // moze powinien byc WorldElement a moze nie
     @Override
     public Animal objectAt(Vector2d position) {
         return animals.get(position);

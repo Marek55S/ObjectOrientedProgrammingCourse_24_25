@@ -13,8 +13,6 @@ public class Simulation {
     private final List<MoveDirection> movesList;
     private final WorldMap map;
 
-    //zabezpiecz sie przed nie dodaniem na mape zwierzecia przez metode place
-    // zeby nie bylo wiecej zwierzat w liscie niz na mapie
     public Simulation(List<Vector2d> startingPositions, List<MoveDirection>moves, WorldMap newMap) {
         map = newMap;
         movesList = moves;
