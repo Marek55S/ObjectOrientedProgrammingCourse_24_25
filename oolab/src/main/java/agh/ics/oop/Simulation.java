@@ -10,16 +10,17 @@ import java.util.List;
 
 public class Simulation {
     private final List<Animal> animalsList = new ArrayList<>();
-    private List<MoveDirection> movesList;
+    private final List<MoveDirection> movesList;
     private final WorldMap map;
 
+    //zabezpiecz sie przed nie dodaniem na mape zwierzecia przez metode place
+    // zeby nie bylo wiecej zwierzat w liscie niz na mapie
     public Simulation(List<Vector2d> startingPositions, List<MoveDirection>moves, WorldMap newMap) {
         map = newMap;
         movesList = moves;
         for (Vector2d startingPosition : startingPositions) {
             Animal newAnimal = new Animal(startingPosition);
-            animalsList.add(newAnimal);
-            map.place(newAnimal);
+            if (map.place(newAnimal)){animalsList.add(newAnimal);}
         }
     }
 

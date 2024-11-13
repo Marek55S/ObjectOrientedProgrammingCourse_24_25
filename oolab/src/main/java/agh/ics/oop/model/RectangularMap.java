@@ -7,16 +7,12 @@ import java.util.Map;
 
 public class RectangularMap implements WorldMap{
     private final Map<Vector2d,Animal> animals = new HashMap<>();
-    private final int mapWidth;
-    private final int mapHeight;
-    private static final Vector2d LOWER_LEFT = new Vector2d(0, 0);
+    private final Vector2d lowerLeft = new Vector2d(0, 0);
     private final Vector2d upperRight;
     private final MapVisualizer mapVisualizer = new MapVisualizer(this);
 
     public RectangularMap(int width, int height) {
-        mapWidth = width;
-        mapHeight = height;
-        upperRight = new Vector2d(mapWidth-1, mapHeight-1);
+        upperRight = new Vector2d(width-1, height-1);
     }
 
     @Override
@@ -54,10 +50,10 @@ public class RectangularMap implements WorldMap{
 
     @Override
     public String toString() {
-        return mapVisualizer.draw(LOWER_LEFT,upperRight);
+        return mapVisualizer.draw(lowerLeft,upperRight);
     }
 
     protected boolean isInMapBounds(Vector2d position) {
-        return position.follows(LOWER_LEFT) && position.precedes(upperRight);
+        return position.follows(lowerLeft) && position.precedes(upperRight);
     }
 }
