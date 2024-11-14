@@ -6,11 +6,13 @@ import java.util.List;
 
 public class World {
     public static void main(String[] args) {
-        List<MoveDirection> directions = OptionsParser.parseDirection(args);
-        List<Vector2d> positions = List.of(new Vector2d(2,2), new Vector2d(3,4));
-        WorldMap map = new RectangularMap(5,5);
-        Simulation simulation = new Simulation(positions, directions,map);
-        simulation.run();
+        GrassField map = new GrassField(5);
+        Animal animal1 = new Animal();
+        Animal animal2 = new Animal(new Vector2d(3,1));
+        System.out.println(map.toString());
+        map.place(animal1);
+        map.place(animal2);
+        System.out.println(map.toString());
     }
 
     public static void run(MoveDirection[] directions) {
