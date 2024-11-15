@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03e5a723-f2a5-418f-a2bf-e6d23360c821" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/GrassFieldTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
@@ -14,11 +13,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/GrassField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/GrassField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/GrassFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/GrassFieldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +87,7 @@
     "Gradle.AnimalTest.testToString.executor": "Run",
     "Gradle.GrassFieldTest.GrassFieldInit.executor": "Run",
     "Gradle.GrassFieldTest.canMoveToTest.executor": "Run",
+    "Gradle.GrassFieldTest.executor": "Run",
     "Gradle.GrassFieldTest.firstBasicTest.executor": "Run",
     "Gradle.GrassFieldTest.isOccupiedTest.executor": "Run",
     "Gradle.GrassFieldTest.moveTest.executor": "Run",
@@ -153,7 +151,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.GrassFieldTest.objectAtTest">
-    <configuration name="GrassFieldTest.canMoveToTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GrassFieldTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -166,7 +164,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;agh.ics.oop.model.GrassFieldTest.canMoveToTest&quot;" />
+            <option value="&quot;agh.ics.oop.model.GrassFieldTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -274,7 +272,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.GrassFieldTest.canMoveToTest" />
+      <item itemvalue="Gradle.GrassFieldTest" />
       <item itemvalue="Gradle.GrassFieldTest.isOccupiedTest" />
       <item itemvalue="Gradle.GrassFieldTest.moveTest" />
       <item itemvalue="Gradle.GrassFieldTest.objectAtTest" />
@@ -283,10 +281,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.GrassFieldTest.objectAtTest" />
+        <item itemvalue="Gradle.GrassFieldTest" />
         <item itemvalue="Gradle.GrassFieldTest.isOccupiedTest" />
         <item itemvalue="Gradle.GrassFieldTest.moveTest" />
         <item itemvalue="Gradle.GrassFieldTest.placeTest" />
-        <item itemvalue="Gradle.GrassFieldTest.canMoveToTest" />
       </list>
     </recent_temporary>
   </component>
@@ -331,6 +329,7 @@
       <workItem from="1731501941002" duration="3539000" />
       <workItem from="1731523953227" duration="1456000" />
       <workItem from="1731536089227" duration="9315000" />
+      <workItem from="1731669536380" duration="430000" />
     </task>
     <servers />
   </component>

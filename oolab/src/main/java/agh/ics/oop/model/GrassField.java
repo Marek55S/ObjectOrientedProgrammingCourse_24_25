@@ -67,7 +67,7 @@ public class GrassField implements WorldMap{
     // jak jednoczesnie jest trawa i zwierze na tej samej pozycji
     @Override
     public WorldElement objectAt(Vector2d position) {
-        return (!animalMap.containsKey(position)) ? animalMap.get(position) : grassMap.get(position);
+        return (animalMap.containsKey(position)) ? animalMap.get(position) : grassMap.get(position);
     }
 
     //sprawdz czy dobrze mapa sie generuje
