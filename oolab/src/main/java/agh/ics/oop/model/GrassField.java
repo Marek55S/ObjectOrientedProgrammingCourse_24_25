@@ -18,8 +18,8 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
 
     private void placeGrass(int grassNumber){
         while (grassMap.size()<grassNumber){
-            int x =generator.nextInt((int) Math.sqrt(grassNumber*10));
-            int y =generator.nextInt((int) Math.sqrt(grassNumber*10));
+            int x =generator.nextInt(1+(int) Math.sqrt(grassNumber*10));
+            int y =generator.nextInt(1+(int) Math.sqrt(grassNumber*10));
             Vector2d newGrassPosition = new Vector2d(x,y);
             if (!grassMap.containsKey(newGrassPosition)){
                 grassMap.put(newGrassPosition,new Grass(newGrassPosition));

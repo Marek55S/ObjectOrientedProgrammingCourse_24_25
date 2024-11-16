@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03e5a723-f2a5-418f-a2bf-e6d23360c821" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/AbstractWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/AbstractWorldMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/GrassField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/GrassField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/RectangularMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/RectangularMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +315,9 @@
       <workItem from="1731523953227" duration="1456000" />
       <workItem from="1731536089227" duration="9315000" />
       <workItem from="1731669536380" duration="430000" />
-      <workItem from="1731750179995" duration="104000" />
+      <workItem from="1731750179995" duration="198000" />
+      <workItem from="1731768208855" duration="243000" />
+      <workItem from="1731793024652" duration="52000" />
     </task>
     <servers />
   </component>
