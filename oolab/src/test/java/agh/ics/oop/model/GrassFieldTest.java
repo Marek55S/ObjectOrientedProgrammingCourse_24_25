@@ -13,7 +13,6 @@ class GrassFieldTest {
         //when
         GrassField map = new GrassField(5);
         //then
-        assertEquals(5,map.grassCount());
     }
 
     @Test
@@ -79,10 +78,13 @@ class GrassFieldTest {
         //given
         GrassField defaultMap = new GrassField(5);
         Animal animal1 = new Animal();
+        Vector2d grassPosition = defaultMap.getGrassPosition();
+        //when
         defaultMap.place(animal1);
         //then
         assertTrue(defaultMap.isOccupied(new Vector2d(2,2)));
-        assertFalse(defaultMap.isOccupied(new Vector2d(3,3)));
+        assertFalse(defaultMap.isOccupied(new Vector2d(10,10)));
+        assertTrue(defaultMap.isOccupied(grassPosition));
     }
 
     // cos nie dziala, zastanow sie jak sprawdzac ta pozal sie boze trawe
@@ -92,18 +94,39 @@ class GrassFieldTest {
         GrassField defaultMap = new GrassField(5);
         Animal animal1 = new Animal();
         Animal animal2 = new Animal(new Vector2d(3,3));
-        Vector2d grass = defaultMap.grassPosition();
-        Grass expectedGrass = new Grass(defaultMap.grassPosition());
+        Vector2d grassPosition = defaultMap.getGrassPosition();
         Vector2d emptyCell= new Vector2d(10,10);
         //when
         animal2.move(MoveDirection.RIGHT,defaultMap);
         defaultMap.place(animal1);
         defaultMap.place(animal2);
         //then
-        assertEquals(new Vector2d(2,2),animal1.getPosition());
-        assertEquals(new Vector2d(3,3),animal2.getPosition());
+        assertEquals(animal1,defaultMap.objectAt(animal1.getPosition()));
+        assertEquals(animal2,defaultMap.objectAt(animal2.getPosition()));
+        assertNotNull(defaultMap.objectAt(grassPosition));
         assertNull(defaultMap.objectAt(emptyCell));
-        //assertEquals(expectedGrass,defaultMap.objectAt(grass));
+    }
+
+    @Test
+    void getGrassPositionTest(){
+        //given
+        GrassField defaultMap = new GrassField(5);
+        Vector2d grassPosition = defaultMap.getGrassPosition();
+        //then
+        assertEquals(grassPosition,defaultMap.getGrassPosition());
+    }
+
+    @Test
+    void getElementsTest(){
+        //given
+        GrassField defaultMap = new GrassField(5);
+        Animal animal1 = new Animal();
+        Animal animal2 = new Animal(new Vector2d(8,8));
+        //when
+        defaultMap.place(animal1);
+        defaultMap.place(animal2);
+        //then
+        assertEquals(7,defaultMap.getElements().size());
     }
 
 

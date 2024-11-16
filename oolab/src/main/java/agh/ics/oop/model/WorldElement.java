@@ -4,5 +4,7 @@ public interface WorldElement {
     //zastanow sie co tu sie przyda
 
     //pewnie getPosition
-    //moze toString(?)
+    Vector2d getPosition();
+
+    String toString();
 }
