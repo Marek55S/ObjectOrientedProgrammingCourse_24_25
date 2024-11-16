@@ -20,7 +20,7 @@ public class RectangularMap extends AbstractWorldMap implements WorldMap{
 
     @Override
     public Animal objectAt(Vector2d position) {
-        return animalMap.get(position);
+        return animals.get(position);
     }
 
     protected boolean isInMapBounds(Vector2d position) {

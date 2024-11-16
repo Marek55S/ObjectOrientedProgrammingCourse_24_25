@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class AbstractWorldMap implements WorldMap {
-    protected final Map <Vector2d,Animal> animalMap =  new HashMap<Vector2d,Animal>();
+    protected final Map <Vector2d,Animal> animals =  new HashMap<Vector2d,Animal>();
     protected final MapVisualizer mapVisualizer = new MapVisualizer(this);
     protected Vector2d upperRight;
     protected Vector2d lowerLeft;
@@ -18,21 +18,21 @@ public abstract class AbstractWorldMap implements WorldMap {
 
     public boolean place(Animal animal) {
         if (this.canMoveTo(animal.getPosition())){
-            animalMap.put(animal.getPosition(), animal);
+            animals.put(animal.getPosition(), animal);
             return true;
         }
         else{return false;}
     }
 
     public boolean isOccupied(Vector2d position){
-        return animalMap.containsKey(position);
+        return animals.containsKey(position);
     }
 
     public void move(Animal animal, MoveDirection direction) {
         if (this.isOccupied(animal.getPosition())){
-            animalMap.remove(animal.getPosition());
+            animals.remove(animal.getPosition());
             animal.move(direction,this);
-            animalMap.put(animal.getPosition(), animal);
+            animals.put(animal.getPosition(), animal);
         }
     }
 
@@ -44,6 +44,6 @@ public abstract class AbstractWorldMap implements WorldMap {
 
     @Override
     public List<WorldElement> getElements() {
-        return new ArrayList<WorldElement>(animalMap.values());
+        return new ArrayList<WorldElement>(animals.values());
     }
 }

@@ -31,18 +31,18 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
 
     @Override
     public boolean canMoveTo(Vector2d position) {
-        return !animalMap.containsKey(position);
+        return !animals.containsKey(position);
     }
 
     @Override
     public boolean isOccupied(Vector2d position) {
-        return this.animalMap.containsKey(position) || this.grassMap.containsKey(position);
+        return this.animals.containsKey(position) || this.grassMap.containsKey(position);
     }
 
 
     @Override
     public WorldElement objectAt(Vector2d position) {
-        return (animalMap.containsKey(position)) ? animalMap.get(position) : grassMap.get(position);
+        return (animals.containsKey(position)) ? animals.get(position) : grassMap.get(position);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
     private void findMapBound(){
         upperRight = grassBoundUR;
         lowerLeft = grassBoundLL;
-        for (Vector2d position : animalMap.keySet()){
+        for (Vector2d position : animals.keySet()){
             upperRight = upperRight.upperRight(position);
             lowerLeft = lowerLeft.lowerLeft(position);
         }
