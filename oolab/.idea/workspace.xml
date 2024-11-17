@@ -7,7 +7,9 @@
     <list default="true" id="03e5a723-f2a5-418f-a2bf-e6d23360c821" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/AbstractWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/AbstractWorldMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/GrassField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/GrassField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/WorldMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/GrassFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/GrassFieldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,76 +71,76 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.AnimalTest.executor": "Run",
-    "Gradle.AnimalTest.moveBackwardBorders.executor": "Run",
-    "Gradle.AnimalTest.moveBackwardDefault.executor": "Run",
-    "Gradle.AnimalTest.moveForwardBorders.executor": "Run",
-    "Gradle.AnimalTest.moveForwardDefault.executor": "Run",
-    "Gradle.AnimalTest.moveRotationLeft.executor": "Run",
-    "Gradle.AnimalTest.testToString.executor": "Run",
-    "Gradle.GrassFieldTest.GrassFieldInit.executor": "Run",
-    "Gradle.GrassFieldTest.canMoveToTest.executor": "Run",
-    "Gradle.GrassFieldTest.executor": "Run",
-    "Gradle.GrassFieldTest.firstBasicTest.executor": "Run",
-    "Gradle.GrassFieldTest.getElementsTest.executor": "Run",
-    "Gradle.GrassFieldTest.getGrassPositionTest.executor": "Run",
-    "Gradle.GrassFieldTest.isOccupiedTest.executor": "Run",
-    "Gradle.GrassFieldTest.mapBoundsTest.executor": "Run",
-    "Gradle.GrassFieldTest.moveTest.executor": "Run",
-    "Gradle.GrassFieldTest.objectAtTest.executor": "Run",
-    "Gradle.GrassFieldTest.placeTest.executor": "Run",
-    "Gradle.MapDirectionTest.executor": "Run",
-    "Gradle.MapDirectionTest.nextforallcases.executor": "Run",
-    "Gradle.MapDirectionTest.previousforallcases.executor": "Run",
-    "Gradle.MapDirectionTest.toStringForAllCases.executor": "Run",
-    "Gradle.MapDirectionTest.toStringallcases.executor": "Run",
-    "Gradle.MapDirectionTest.toUnitVectorAllCases.executor": "Run",
-    "Gradle.OptionParserTest.executor": "Run",
-    "Gradle.OptionParserTest.parseDirectionAllValidDirections.executor": "Run",
-    "Gradle.OptionsParserTest.executor": "Run",
-    "Gradle.RectangularMapTest.CanMoveToTest.executor": "Run",
-    "Gradle.RectangularMapTest.executor": "Run",
-    "Gradle.RectangularMapTest.firstBasicTest.executor": "Run",
-    "Gradle.RectangularMapTest.getElementsTest.executor": "Run",
-    "Gradle.RectangularMapTest.isInMapBoundsTest.executor": "Run",
-    "Gradle.RectangularMapTest.isOccupiedTest.executor": "Run",
-    "Gradle.RectangularMapTest.moveTest.executor": "Run",
-    "Gradle.RectangularMapTest.objectAtTest.executor": "Run",
-    "Gradle.RectangularMapTest.placeTest.executor": "Run",
-    "Gradle.SimulationTest.executor": "Run",
-    "Gradle.SimulationTest.simulationMultiAnimal.executor": "Run",
-    "Gradle.Vector2dTest.addPositiveNegativeMixedAndZero.executor": "Run",
-    "Gradle.Vector2dTest.equalsCases.executor": "Run",
-    "Gradle.Vector2dTest.equalsFourCases.executor": "Run",
-    "Gradle.Vector2dTest.executor": "Run",
-    "Gradle.Vector2dTest.followsBiggerSmallerEqual.executor": "Run",
-    "Gradle.Vector2dTest.lowerLeftBiggerSmallerEqualAndMixed.executor": "Run",
-    "Gradle.Vector2dTest.oppositePositiveNegativeZeroAndMixed.executor": "Run",
-    "Gradle.Vector2dTest.precedesBiggerSmallerEqual.executor": "Run",
-    "Gradle.Vector2dTest.subtractPositiveNegativeMixedAndZero.executor": "Run",
-    "Gradle.Vector2dTest.toStringPositiveAndNegative.executor": "Run",
-    "Gradle.Vector2dTest.upperRightBiggerSmallerEqualAndMixed.executor": "Run",
-    "Gradle.oolab [:agh.ics.oop.World.main()].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "lab5",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/work/studia/sem3/PO/PO_2024_PN_1315_SWAKON/oolab",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AnimalTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AnimalTest.moveBackwardBorders.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AnimalTest.moveBackwardDefault.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AnimalTest.moveForwardBorders.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AnimalTest.moveForwardDefault.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AnimalTest.moveRotationLeft.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AnimalTest.testToString.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GrassFieldTest.GrassFieldInit.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GrassFieldTest.canMoveToTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GrassFieldTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GrassFieldTest.firstBasicTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GrassFieldTest.getElementsTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GrassFieldTest.getGrassPositionTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GrassFieldTest.isOccupiedTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GrassFieldTest.mapBoundsTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GrassFieldTest.moveTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GrassFieldTest.objectAtTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GrassFieldTest.placeTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.nextforallcases.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.previousforallcases.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.toStringForAllCases.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.toStringallcases.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.toUnitVectorAllCases.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OptionParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OptionParserTest.parseDirectionAllValidDirections.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OptionsParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RectangularMapTest.CanMoveToTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RectangularMapTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RectangularMapTest.firstBasicTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RectangularMapTest.getElementsTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RectangularMapTest.isInMapBoundsTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RectangularMapTest.isOccupiedTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RectangularMapTest.moveTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RectangularMapTest.objectAtTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RectangularMapTest.placeTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SimulationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SimulationTest.simulationMultiAnimal.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.addPositiveNegativeMixedAndZero.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.equalsCases.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.equalsFourCases.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.followsBiggerSmallerEqual.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.lowerLeftBiggerSmallerEqualAndMixed.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.oppositePositiveNegativeZeroAndMixed.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.precedesBiggerSmallerEqual.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.subtractPositiveNegativeMixedAndZero.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.toStringPositiveAndNegative.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.upperRightBiggerSmallerEqualAndMixed.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.oolab [:agh.ics.oop.World.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lab5&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/work/studia/sem3/PO/PO_2024_PN_1315_SWAKON/oolab&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -148,7 +150,7 @@
       <recent name="agh.ics.oop" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GrassFieldTest">
+  <component name="RunManager" selected="Gradle.RectangularMapTest">
     <configuration name="GrassFieldTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -278,9 +280,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RectangularMapTest" />
         <item itemvalue="Gradle.GrassFieldTest" />
         <item itemvalue="Gradle.GrassFieldTest.mapBoundsTest" />
-        <item itemvalue="Gradle.RectangularMapTest" />
         <item itemvalue="Gradle.GrassFieldTest.getElementsTest" />
         <item itemvalue="Gradle.RectangularMapTest.getElementsTest" />
       </list>
@@ -331,6 +333,7 @@
       <workItem from="1731750179995" duration="198000" />
       <workItem from="1731768208855" duration="243000" />
       <workItem from="1731793024652" duration="5537000" />
+      <workItem from="1731875080993" duration="1426000" />
     </task>
     <servers />
   </component>

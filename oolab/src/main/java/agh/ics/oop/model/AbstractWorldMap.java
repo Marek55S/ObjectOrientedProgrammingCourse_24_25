@@ -2,10 +2,8 @@ package agh.ics.oop.model;
 
 import agh.ics.oop.model.util.MapVisualizer;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class AbstractWorldMap implements WorldMap {
     protected final Map <Vector2d,Animal> animals =  new HashMap<Vector2d,Animal>();
@@ -43,7 +41,7 @@ public abstract class AbstractWorldMap implements WorldMap {
     }
 
     @Override
-    public List<WorldElement> getElements() {
-        return new ArrayList<WorldElement>(animals.values());
+    public Collection<WorldElement> getElements() {
+        return new ArrayList<>(animals.values());
     }
 }

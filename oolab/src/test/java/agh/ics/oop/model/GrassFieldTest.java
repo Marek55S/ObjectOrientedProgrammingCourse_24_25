@@ -2,6 +2,7 @@ package agh.ics.oop.model;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Collection;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,7 +13,9 @@ class GrassFieldTest {
     void grassFieldInit(){
         //when
         GrassField map = new GrassField(5);
+        Collection<WorldElement> elements =  map.getElements();
         //then
+        assertEquals(5,elements.size());
     }
 
     @Test

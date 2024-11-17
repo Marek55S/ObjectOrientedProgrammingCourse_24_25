@@ -75,8 +75,8 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
     }
 
     @Override
-    public List<WorldElement> getElements(){
-        List<WorldElement> elements = super.getElements();
+    public Collection<WorldElement> getElements(){
+        Collection<WorldElement> elements = super.getElements();
         elements.addAll(grassMap.values());
         return elements;
     }
