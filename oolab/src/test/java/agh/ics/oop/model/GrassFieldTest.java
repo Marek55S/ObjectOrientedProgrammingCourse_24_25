@@ -129,5 +129,28 @@ class GrassFieldTest {
         assertEquals(7,defaultMap.getElements().size());
     }
 
+    @Test
+    void mapBoundsTest(){
+        //given
+        GrassField defaultMap = new GrassField(5);
+        Animal animal1 = new Animal(new Vector2d(7,7));
+        Animal animal2 = new Animal(new Vector2d(0,0));
+        //when
+        defaultMap.place(animal1);
+        defaultMap.place(animal2);
+        Vector2d lower = defaultMap.getLowerLeft();
+        Vector2d upper = defaultMap.getUpperRight();
+        defaultMap.move(animal1,MoveDirection.FORWARD);
+        defaultMap.move(animal2,MoveDirection.BACKWARD);
+        Vector2d lower2 = defaultMap.getLowerLeft();
+        Vector2d upper2 = defaultMap.getUpperRight();
+        //then
+        assertEquals(new Vector2d(7,7),upper);
+        assertEquals(new Vector2d(0,0),lower);
+        assertEquals(new Vector2d(7,8),upper2);
+        assertEquals(new Vector2d(0,-1),lower2);
+
+    }
+
 
 }

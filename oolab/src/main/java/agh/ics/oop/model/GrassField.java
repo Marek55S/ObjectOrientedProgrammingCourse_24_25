@@ -36,7 +36,7 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
 
     @Override
     public boolean isOccupied(Vector2d position) {
-        return this.animals.containsKey(position) || this.grassMap.containsKey(position);
+        return animals.containsKey(position) || grassMap.containsKey(position);
     }
 
 
@@ -62,6 +62,16 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
 
     protected Vector2d getGrassPosition(){
         return grassMap.keySet().iterator().next();
+    }
+
+    protected Vector2d getUpperRight(){
+        findMapBound();
+        return upperRight;
+    }
+
+    protected Vector2d getLowerLeft(){
+        findMapBound();
+        return  lowerLeft;
     }
 
     @Override
