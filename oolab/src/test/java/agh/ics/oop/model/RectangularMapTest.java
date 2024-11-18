@@ -92,9 +92,10 @@ class RectangularMapTest {
         animal2.move(MoveDirection.RIGHT,defaultMap);
         defaultMap.place(animal1);
         defaultMap.place(animal2);
+
         //then
-        assertEquals(new Vector2d(2,2),animal1.getPosition());
-        assertEquals(new Vector2d(3,3),animal2.getPosition());
+        assertEquals(animal1,defaultMap.objectAt(new Vector2d(2,2)));
+        assertEquals(animal2,defaultMap.objectAt(new Vector2d(3,3)));
     }
 
     //ufam, że MapVisualizer działa poprawnie
@@ -107,5 +108,22 @@ class RectangularMapTest {
         assertTrue(otherMap.isInMapBounds(new Vector2d(2,2)));
         assertFalse(otherMap.isInMapBounds(new Vector2d(11,-2)));
         assertFalse(otherMap.isInMapBounds(new Vector2d(7,7)));
+    }
+
+    @Test
+    void getElementsTest(){
+        //given
+        RectangularMap defaultMap = new RectangularMap(5,5);
+        Animal animal1 = new Animal();
+        Animal animal2 = new Animal(new Vector2d(3,3));
+        Animal animal3 = new Animal(new Vector2d(1,2));
+        Animal animal4 = new Animal(new Vector2d(7,7));
+        //when
+        defaultMap.place(animal1);
+        defaultMap.place(animal2);
+        defaultMap.place(animal3);
+        defaultMap.place(animal4);
+        //then
+        assertEquals(3,defaultMap.getElements().size());
     }
 }
