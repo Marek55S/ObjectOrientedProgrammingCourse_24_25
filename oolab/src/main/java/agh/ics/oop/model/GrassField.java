@@ -1,37 +1,33 @@
 package agh.ics.oop.model;
 
-import agh.ics.oop.model.util.MapVisualizer;
-
 import java.util.*;
 
 public class GrassField extends AbstractWorldMap implements WorldMap{
     private final Map<Vector2d,Grass> grassMap = new HashMap<Vector2d,Grass>();
-    private Vector2d grassBoundUR;
-    private Vector2d grassBoundLL;
+    private Vector2d grassBoundUpperRight;
+    private Vector2d grassBoundLowerLeft;
+    private Vector2d mapUpperRight;
+    private Vector2d mapLowerLeft;
     private final Random generator = new Random();
 
     public GrassField(int grassNumber) {
-        grassBoundUR = new Vector2d(0,0);
-        grassBoundLL = new Vector2d((int) Math.sqrt(grassNumber*10),(int) Math.sqrt(grassNumber*10));
-        placeGrass(grassNumber);
+        int generatorLimit = 1+(int) Math.sqrt(grassNumber*10);
+        grassBoundUpperRight = new Vector2d(0,0);
+        grassBoundLowerLeft = new Vector2d(generatorLimit,generatorLimit);
+        placeGrass(grassNumber,generatorLimit);
     }
 
-    private void placeGrass(int grassNumber){
+    private void placeGrass(int grassNumber, int generatorLimit) {
         while (grassMap.size()<grassNumber){
-            int x =generator.nextInt(1+(int) Math.sqrt(grassNumber*10));
-            int y =generator.nextInt(1+(int) Math.sqrt(grassNumber*10));
+            int x =generator.nextInt(generatorLimit);
+            int y =generator.nextInt(generatorLimit);
             Vector2d newGrassPosition = new Vector2d(x,y);
             if (!grassMap.containsKey(newGrassPosition)){
                 grassMap.put(newGrassPosition,new Grass(newGrassPosition));
-                grassBoundUR = grassBoundUR.upperRight(newGrassPosition);
-                grassBoundLL = grassBoundLL.lowerLeft(newGrassPosition);
+                grassBoundUpperRight = grassBoundUpperRight.upperRight(newGrassPosition);
+                grassBoundLowerLeft = grassBoundLowerLeft.lowerLeft(newGrassPosition);
             }
         }
-    }
-
-    @Override
-    public boolean canMoveTo(Vector2d position) {
-        return !animals.containsKey(position);
     }
 
     @Override
@@ -42,36 +38,40 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
 
     @Override
     public WorldElement objectAt(Vector2d position) {
-        return (animals.containsKey(position)) ? animals.get(position) : grassMap.get(position);
+        if (super.objectAt(position) == null) {
+            return grassMap.get(position);
+        }
+        else{ return super.objectAt(position); }
     }
 
     @Override
     public String toString(){
         this.findMapBound();
-        return super.toString();
+        return mapVisualizer.draw(mapLowerLeft,mapUpperRight);
     }
 
     private void findMapBound(){
-        upperRight = grassBoundUR;
-        lowerLeft = grassBoundLL;
+        mapUpperRight = grassBoundUpperRight;
+        mapLowerLeft = grassBoundLowerLeft;
         for (Vector2d position : animals.keySet()){
-            upperRight = upperRight.upperRight(position);
-            lowerLeft = lowerLeft.lowerLeft(position);
+            mapUpperRight = mapUpperRight.upperRight(position);
+            mapLowerLeft = mapLowerLeft.lowerLeft(position);
         }
     }
 
-    protected Vector2d getGrassPosition(){
+    //niepotrzebna metoda, korzystaj w testach z getElemetnts
+     Vector2d getGrassPosition(){
         return grassMap.keySet().iterator().next();
     }
 
-    protected Vector2d getUpperRight(){
+    protected Vector2d getMapUpperRight(){
         findMapBound();
-        return upperRight;
+        return mapUpperRight;
     }
 
-    protected Vector2d getLowerLeft(){
+    protected Vector2d getMapLowerLeft(){
         findMapBound();
-        return  lowerLeft;
+        return mapLowerLeft;
     }
 
     @Override

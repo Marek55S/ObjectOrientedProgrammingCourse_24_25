@@ -3,7 +3,6 @@ package agh.ics.oop.model;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -141,12 +140,12 @@ class GrassFieldTest {
         //when
         defaultMap.place(animal1);
         defaultMap.place(animal2);
-        Vector2d lower = defaultMap.getLowerLeft();
-        Vector2d upper = defaultMap.getUpperRight();
+        Vector2d lower = defaultMap.getMapLowerLeft();
+        Vector2d upper = defaultMap.getMapUpperRight();
         defaultMap.move(animal1,MoveDirection.FORWARD);
         defaultMap.move(animal2,MoveDirection.BACKWARD);
-        Vector2d lower2 = defaultMap.getLowerLeft();
-        Vector2d upper2 = defaultMap.getUpperRight();
+        Vector2d lower2 = defaultMap.getMapLowerLeft();
+        Vector2d upper2 = defaultMap.getMapUpperRight();
         //then
         assertEquals(new Vector2d(7,7),upper);
         assertEquals(new Vector2d(0,0),lower);

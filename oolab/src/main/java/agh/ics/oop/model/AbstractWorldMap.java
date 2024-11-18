@@ -8,11 +8,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class AbstractWorldMap implements WorldMap {
     protected final Map <Vector2d,Animal> animals =  new HashMap<Vector2d,Animal>();
     protected final MapVisualizer mapVisualizer = new MapVisualizer(this);
-    protected Vector2d upperRight;
-    protected Vector2d lowerLeft;
 
 
-    public abstract boolean canMoveTo(Vector2d position);
+    public boolean canMoveTo(Vector2d position){
+        return !animals.containsKey(position);
+    }
 
     public boolean place(Animal animal) {
         if (this.canMoveTo(animal.getPosition())){
@@ -34,11 +34,11 @@ public abstract class AbstractWorldMap implements WorldMap {
         }
     }
 
-    public abstract WorldElement objectAt(Vector2d position);
-
-    public String toString() {
-        return mapVisualizer.draw(lowerLeft,upperRight);
+    public WorldElement objectAt(Vector2d position){
+        return animals.get(position);
     }
+
+    public abstract String toString();
 
     @Override
     public Collection<WorldElement> getElements() {
