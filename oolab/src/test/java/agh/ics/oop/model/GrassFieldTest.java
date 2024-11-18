@@ -3,6 +3,7 @@ package agh.ics.oop.model;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -80,7 +81,14 @@ class GrassFieldTest {
         //given
         GrassField defaultMap = new GrassField(5);
         Animal animal1 = new Animal();
-        Vector2d grassPosition = defaultMap.getGrassPosition();
+        Collection<WorldElement> elements = defaultMap.getElements();
+        Vector2d grassPosition = new Vector2d(2,2);
+        for(WorldElement element : elements){
+            if(element instanceof Grass){
+                grassPosition = element.getPosition();
+                break;
+            }
+        }
         //when
         defaultMap.place(animal1);
         //then

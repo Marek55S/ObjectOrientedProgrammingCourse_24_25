@@ -59,10 +59,6 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
         }
     }
 
-    //niepotrzebna metoda, korzystaj w testach z getElemetnts
-     Vector2d getGrassPosition(){
-        return grassMap.keySet().iterator().next();
-    }
 
     protected Vector2d getMapUpperRight(){
         findMapBound();
