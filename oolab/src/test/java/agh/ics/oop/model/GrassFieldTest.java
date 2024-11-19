@@ -104,7 +104,14 @@ class GrassFieldTest {
         GrassField defaultMap = new GrassField(5);
         Animal animal1 = new Animal();
         Animal animal2 = new Animal(new Vector2d(3,3));
-        Vector2d grassPosition = defaultMap.getGrassPosition();
+        Collection<WorldElement> elements = defaultMap.getElements();
+        Vector2d grassPosition = new Vector2d(2,2);
+        for(WorldElement element : elements){
+            if(element instanceof Grass){
+                grassPosition = element.getPosition();
+                break;
+            }
+        }
         Vector2d emptyCell= new Vector2d(10,10);
         //when
         animal2.move(MoveDirection.RIGHT,defaultMap);
@@ -115,15 +122,6 @@ class GrassFieldTest {
         assertEquals(animal2,defaultMap.objectAt(animal2.getPosition()));
         assertNotNull(defaultMap.objectAt(grassPosition));
         assertNull(defaultMap.objectAt(emptyCell));
-    }
-
-    @Test
-    void getGrassPositionTest(){
-        //given
-        GrassField defaultMap = new GrassField(5);
-        Vector2d grassPosition = defaultMap.getGrassPosition();
-        //then
-        assertEquals(grassPosition,defaultMap.getGrassPosition());
     }
 
     @Test
