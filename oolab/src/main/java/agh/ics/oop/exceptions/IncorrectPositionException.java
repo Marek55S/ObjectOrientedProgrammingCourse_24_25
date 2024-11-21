@@ -1,4 +1,4 @@
-package agh.ics.oop.model.util;
+package agh.ics.oop.exceptions;
 
 import agh.ics.oop.model.Vector2d;
 

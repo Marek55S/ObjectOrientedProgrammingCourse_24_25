@@ -36,29 +36,25 @@ class OptionsParserTest {
     }
 
     @Test
-    void parseDirectionALLInvalidDirections(){
+    void parseDirectionALLInvalidDirections() {
         //given
-        String[] invalidDirections = {"x","y","z"};
-        List<MoveDirection> expectedArray = List.of();
-
-        //when
-        List<MoveDirection> parsedArray = OptionsParser.parseDirection(invalidDirections);
+        String[] invalidDirections = {"x", "y", "z"};
 
         //then
-        assertEquals(expectedArray, parsedArray);
+        assertThrows(IllegalArgumentException.class, () -> {
+            OptionsParser.parseDirection(invalidDirections);
+        });
     }
-
     @Test
     void parseDirectionMixedDirections() {
         //given
         String[] mixedDirections = {"x","b","y","z","f"};
         List<MoveDirection> expectedArray = List.of(MoveDirection.BACKWARD,MoveDirection.FORWARD);
 
-        //when
-        List<MoveDirection> parsedArray = OptionsParser.parseDirection(mixedDirections);
-
         //then
-        assertEquals(expectedArray, parsedArray);
+        assertThrows(IllegalArgumentException.class, () -> {
+            OptionsParser.parseDirection(mixedDirections);
+        });
     }
 
 }
