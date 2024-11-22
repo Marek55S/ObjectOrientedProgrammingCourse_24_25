@@ -173,17 +173,15 @@ class GrassFieldTest {
             defaultMap.place(animal2);
         }catch (IncorrectPositionException e) {
             fail(e.getMessage() + " exception should not be thrown");}
-        Vector2d lower = defaultMap.getMapLowerLeft();
-        Vector2d upper = defaultMap.getMapUpperRight();
+        Boundary firstMapBounds = defaultMap.getCurrentBounds();
         defaultMap.move(animal1,MoveDirection.FORWARD);
         defaultMap.move(animal2,MoveDirection.BACKWARD);
-        Vector2d lower2 = defaultMap.getMapLowerLeft();
-        Vector2d upper2 = defaultMap.getMapUpperRight();
+        Boundary secondMapBounds = defaultMap.getCurrentBounds();
         //then
-        assertEquals(new Vector2d(7,7),upper);
-        assertEquals(new Vector2d(0,0),lower);
-        assertEquals(new Vector2d(7,8),upper2);
-        assertEquals(new Vector2d(0,-1),lower2);
+        assertEquals(new Vector2d(7,7),firstMapBounds.UpperRight());
+        assertEquals(new Vector2d(0,0),firstMapBounds.LowerLeft());
+        assertEquals(new Vector2d(7,8),secondMapBounds.UpperRight());
+        assertEquals(new Vector2d(0,-1),secondMapBounds.LowerLeft());
 
     }
 

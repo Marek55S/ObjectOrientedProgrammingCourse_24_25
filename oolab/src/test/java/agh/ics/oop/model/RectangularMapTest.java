@@ -12,6 +12,7 @@ class RectangularMapTest {
         //given
         RectangularMap defaultMap = new RectangularMap(5,5);
         Animal animal = new Animal();
+        Boundary mapBounds = defaultMap.getCurrentBounds();
         //when
         try {
             defaultMap.place(animal);
@@ -22,6 +23,8 @@ class RectangularMapTest {
         //then
         assertEquals(new Vector2d(2,3),animal.getPosition());
         assertEquals(MapDirection.NORTH,animal.getOrientation());
+        assertEquals(new Vector2d(0,0),mapBounds.LowerLeft());
+        assertEquals(new Vector2d(4,4),mapBounds.UpperRight());
     }
 
     @Test

@@ -40,10 +40,14 @@ public abstract class AbstractWorldMap implements WorldMap {
         return animals.get(position);
     }
 
-    public abstract String toString();
+    public  String toString(){
+        return mapVisualizer.draw(this.getCurrentBounds().LowerLeft(), this.getCurrentBounds().UpperRight());
+    }
 
     @Override
     public Collection<WorldElement> getElements() {
         return new ArrayList<>(animals.values());
     }
+
+    public abstract Boundary getCurrentBounds();
 }
