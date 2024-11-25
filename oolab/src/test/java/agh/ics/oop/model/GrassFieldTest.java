@@ -1,5 +1,6 @@
 package agh.ics.oop.model;
 
+import agh.ics.oop.exceptions.IncorrectPositionException;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
@@ -24,7 +25,10 @@ class GrassFieldTest {
         GrassField defaultMap = new GrassField(10);
         Animal animal = new Animal();
         //when
-        defaultMap.place(animal);
+        try {
+            defaultMap.place(animal);
+        }catch (IncorrectPositionException e) {
+            fail(e.getMessage() + " exception should not be thrown");}
         defaultMap.move(animal,MoveDirection.FORWARD);
         //then
         assertEquals(new Vector2d(2,3),animal.getPosition());
@@ -38,7 +42,10 @@ class GrassFieldTest {
         Vector2d freeCell = new Vector2d(1,0);
         Animal animal = new Animal();
         //when
-        defaultMap.place(animal);
+        try {
+            defaultMap.place(animal);
+        }catch (IncorrectPositionException e) {
+            fail(e.getMessage() + " exception should not be thrown");}
         //then
         assertFalse(defaultMap.canMoveTo(occupiedCell));
         assertTrue(defaultMap.canMoveTo(freeCell));
@@ -51,9 +58,12 @@ class GrassFieldTest {
         Animal animal2 = new Animal(new Vector2d(8,8));
         Animal animal3 = new Animal();
         //then
-        assertTrue(defaultMap.place(animal1));
-        assertTrue(defaultMap.place(animal2));
-        assertFalse(defaultMap.place(animal3));
+        try {
+            assertTrue(defaultMap.place(animal1));
+            assertTrue(defaultMap.place(animal2));
+        }catch (IncorrectPositionException e) {
+            fail(e.getMessage() + " exception should not be thrown");}
+        assertThrows(IncorrectPositionException.class, ()->{defaultMap.place(animal3);});
     }
 
     @Test
@@ -63,8 +73,11 @@ class GrassFieldTest {
         Animal animal1 = new Animal();
         Animal animal2 = new Animal(new Vector2d(2,3));
         //when
-        defaultMap.place(animal1);
-        defaultMap.place(animal2);
+        try {
+            defaultMap.place(animal1);
+            defaultMap.place(animal2);
+        }catch (IncorrectPositionException e) {
+            fail(e.getMessage() + " exception should not be thrown");}
         defaultMap.move(animal1,MoveDirection.FORWARD);
         defaultMap.move(animal1,MoveDirection.RIGHT);
         defaultMap.move(animal2,MoveDirection.LEFT);
@@ -90,7 +103,11 @@ class GrassFieldTest {
             }
         }
         //when
-        defaultMap.place(animal1);
+        try {
+            defaultMap.place(animal1);
+        } catch (IncorrectPositionException e) {
+            fail(e.getMessage() + " exception should not be thrown");;
+        }
         //then
         assertTrue(defaultMap.isOccupied(new Vector2d(2,2)));
         assertFalse(defaultMap.isOccupied(new Vector2d(10,10)));
@@ -115,8 +132,12 @@ class GrassFieldTest {
         Vector2d emptyCell= new Vector2d(10,10);
         //when
         animal2.move(MoveDirection.RIGHT,defaultMap);
-        defaultMap.place(animal1);
-        defaultMap.place(animal2);
+        try {
+            defaultMap.place(animal1);
+            defaultMap.place(animal2);
+        } catch (IncorrectPositionException e) {
+        fail(e.getMessage() + " exception should not be thrown");}
+
         //then
         assertEquals(animal1,defaultMap.objectAt(animal1.getPosition()));
         assertEquals(animal2,defaultMap.objectAt(animal2.getPosition()));
@@ -131,8 +152,11 @@ class GrassFieldTest {
         Animal animal1 = new Animal();
         Animal animal2 = new Animal(new Vector2d(8,8));
         //when
-        defaultMap.place(animal1);
-        defaultMap.place(animal2);
+        try {
+            defaultMap.place(animal1);
+            defaultMap.place(animal2);
+        }catch (IncorrectPositionException e) {
+            fail(e.getMessage() + " exception should not be thrown");}
         //then
         assertEquals(7,defaultMap.getElements().size());
     }
@@ -144,19 +168,20 @@ class GrassFieldTest {
         Animal animal1 = new Animal(new Vector2d(7,7));
         Animal animal2 = new Animal(new Vector2d(0,0));
         //when
-        defaultMap.place(animal1);
-        defaultMap.place(animal2);
-        Vector2d lower = defaultMap.getMapLowerLeft();
-        Vector2d upper = defaultMap.getMapUpperRight();
+        try {
+            defaultMap.place(animal1);
+            defaultMap.place(animal2);
+        }catch (IncorrectPositionException e) {
+            fail(e.getMessage() + " exception should not be thrown");}
+        Boundary firstMapBounds = defaultMap.getCurrentBounds();
         defaultMap.move(animal1,MoveDirection.FORWARD);
         defaultMap.move(animal2,MoveDirection.BACKWARD);
-        Vector2d lower2 = defaultMap.getMapLowerLeft();
-        Vector2d upper2 = defaultMap.getMapUpperRight();
+        Boundary secondMapBounds = defaultMap.getCurrentBounds();
         //then
-        assertEquals(new Vector2d(7,7),upper);
-        assertEquals(new Vector2d(0,0),lower);
-        assertEquals(new Vector2d(7,8),upper2);
-        assertEquals(new Vector2d(0,-1),lower2);
+        assertEquals(new Vector2d(7,7),firstMapBounds.UpperRight());
+        assertEquals(new Vector2d(0,0),firstMapBounds.LowerLeft());
+        assertEquals(new Vector2d(7,8),secondMapBounds.UpperRight());
+        assertEquals(new Vector2d(0,-1),secondMapBounds.LowerLeft());
 
     }
 

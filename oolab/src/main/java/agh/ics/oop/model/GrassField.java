@@ -44,12 +44,6 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
         else{ return super.objectAt(position); }
     }
 
-    @Override
-    public String toString(){
-        this.findMapBound();
-        return mapVisualizer.draw(mapLowerLeft,mapUpperRight);
-    }
-
     private void findMapBound(){
         mapUpperRight = grassBoundUpperRight;
         mapLowerLeft = grassBoundLowerLeft;
@@ -59,16 +53,12 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
         }
     }
 
-
-    protected Vector2d getMapUpperRight(){
+    @Override
+    public Boundary getCurrentBounds() {
         findMapBound();
-        return mapUpperRight;
+        return new Boundary(mapLowerLeft,mapUpperRight);
     }
 
-    protected Vector2d getMapLowerLeft(){
-        findMapBound();
-        return mapLowerLeft;
-    }
 
     @Override
     public Collection<WorldElement> getElements(){
@@ -76,5 +66,6 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
         elements.addAll(grassMap.values());
         return elements;
     }
+
 
 }

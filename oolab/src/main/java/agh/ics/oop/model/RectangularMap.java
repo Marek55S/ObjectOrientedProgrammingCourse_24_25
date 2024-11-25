@@ -24,8 +24,9 @@ public class RectangularMap extends AbstractWorldMap implements WorldMap{
         return position.follows(lowerLeft) && position.precedes(upperRight);
     }
 
-    public String toString(){
-        return mapVisualizer.draw(lowerLeft, upperRight);
+    @Override
+    public Boundary getCurrentBounds() {
+        return new Boundary(lowerLeft, upperRight);
     }
 
 
