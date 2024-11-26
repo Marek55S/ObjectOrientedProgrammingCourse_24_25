@@ -6,7 +6,7 @@ import agh.ics.oop.model.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Simulation {
+public class Simulation implements Runnable {
     private final List<Animal> animalsList = new ArrayList<>();
     private final List<MoveDirection> movesList;
     private final WorldMap map;
@@ -29,7 +29,7 @@ public class Simulation {
         return animalsList;
     }
 
-
+    @Override
     public void run(){
         int numberOfAnimals = animalsList.size();
         for(int i = 0;i<movesList.size();i++){
