@@ -21,9 +21,18 @@ public class SimulationEngine {
         }
     }
 
+    // przemyśl to i sprawdź czy na pewno o to chodzi
     public void runAsync(){
         for(int i=0;i<simulationsList.size();i++){
             threadList.get(i).start();
+        }
+        for(int i=0;i<simulationsList.size();i++){
+            try {
+                threadList.get(i).join();
+            }catch (InterruptedException e){
+                Thread.currentThread().interrupt();
+                System.out.println("wątek został przerwany");
+            }
         }
     }
 
