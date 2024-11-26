@@ -8,6 +8,7 @@ public class ConsoleMapDisplay implements MapChangeListener{
         updatesCounter++;
         System.out.printf("updates so far: %d %n", updatesCounter);
         System.out.println(message);
+        System.out.println("map ID: "+ map.getID().toString());
         System.out.println(map.toString());
     }
 }
