@@ -5,9 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MapDirectionTest {
-    // mógłbym deklarować instancje MapDirection w 'given', a w 'when' zadeklarować zmienne String z przypisanymi
-    // do nichwykonywanymi metodami toString, ale aktualna wersja jest któtsza i moim zdaniem czytelniejsza
-    // analogicznie w pozostałych testach tej klasy
 
     @Test
     void toStringForAllCases(){

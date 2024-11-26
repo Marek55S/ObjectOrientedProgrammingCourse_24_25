@@ -4,7 +4,6 @@ import agh.ics.oop.exceptions.IncorrectPositionException;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -59,11 +58,11 @@ class GrassFieldTest {
         Animal animal3 = new Animal();
         //then
         try {
-            assertTrue(defaultMap.place(animal1));
-            assertTrue(defaultMap.place(animal2));
+            defaultMap.place(animal1);
+            defaultMap.place(animal2);
         }catch (IncorrectPositionException e) {
             fail(e.getMessage() + " exception should not be thrown");}
-        assertThrows(IncorrectPositionException.class, ()->{defaultMap.place(animal3);});
+        assertThrows(IncorrectPositionException.class, ()-> defaultMap.place(animal3));
     }
 
     @Test
@@ -106,7 +105,7 @@ class GrassFieldTest {
         try {
             defaultMap.place(animal1);
         } catch (IncorrectPositionException e) {
-            fail(e.getMessage() + " exception should not be thrown");;
+            fail(e.getMessage() + " exception should not be thrown");
         }
         //then
         assertTrue(defaultMap.isOccupied(new Vector2d(2,2)));

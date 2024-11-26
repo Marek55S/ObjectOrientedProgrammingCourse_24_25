@@ -16,11 +16,10 @@ public abstract class AbstractWorldMap implements WorldMap {
         return !animals.containsKey(position);
     }
 
-    public boolean place(Animal animal) throws IncorrectPositionException {
+    public void place(Animal animal) throws IncorrectPositionException {
         if (this.canMoveTo(animal.getPosition())){
             animals.put(animal.getPosition(), animal);
             this.notifyAllObservers("animal was placed in position %s".formatted(animal.getPosition()));
-            return true;
         }
         else{throw new IncorrectPositionException(animal.getPosition());
         }

@@ -57,13 +57,13 @@ class RectangularMapTest {
         Animal animal4 = new Animal();
         //then
         try {
-            assertTrue(defaultMap.place(animal1));
-            assertTrue(defaultMap.place(animal2));
+            defaultMap.place(animal1);
+            defaultMap.place(animal2);
         }catch(IncorrectPositionException e){
                 fail(e.getMessage() + " exception should not be thrown");
         }
-        assertThrows(IncorrectPositionException.class, () ->{defaultMap.place(animal3);});
-        assertThrows(IncorrectPositionException.class, () ->{defaultMap.place(animal4);});
+        assertThrows(IncorrectPositionException.class, () -> defaultMap.place(animal3));
+        assertThrows(IncorrectPositionException.class, () -> defaultMap.place(animal4));
     }
 
     @Test

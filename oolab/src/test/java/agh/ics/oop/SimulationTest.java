@@ -3,7 +3,6 @@ package agh.ics.oop;
 import agh.ics.oop.model.*;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,7 +32,7 @@ class SimulationTest {
         Simulation simulation = new Simulation(startingPositions,moves,map);
         simulation.run();
         //then
-        assertEquals(new Vector2d(1,3),simulation.getAnimalsList().get(0).getPosition());
+        assertEquals(new Vector2d(1,3),simulation.getAnimalsList().getFirst().getPosition());
     }
 
     @Test
