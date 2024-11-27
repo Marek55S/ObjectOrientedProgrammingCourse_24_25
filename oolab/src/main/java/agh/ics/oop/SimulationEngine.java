@@ -9,7 +9,7 @@ public class SimulationEngine {
 
     public SimulationEngine(List<Simulation> simulations) {
         simulationsList = simulations;
-        threadList = new ArrayList<Thread>();
+        threadList = new ArrayList<>();
         for(Simulation simulation : simulationsList) {
             threadList.add(new Thread(simulation));
         }
@@ -26,6 +26,10 @@ public class SimulationEngine {
         for(int i=0;i<simulationsList.size();i++){
             threadList.get(i).start();
         }
+        this.awaitSimulationsEnd();
+    }
+
+    public void awaitSimulationsEnd(){
         for(int i=0;i<simulationsList.size();i++){
             try {
                 threadList.get(i).join();
@@ -34,10 +38,6 @@ public class SimulationEngine {
                 System.out.println("wątek został przerwany");
             }
         }
-    }
-
-    public void awaitSimulationsEnd(){
-
     }
 
 }
