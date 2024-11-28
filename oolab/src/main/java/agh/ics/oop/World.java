@@ -13,14 +13,14 @@ public class World {
             for(int i=0;i<30;i++) {
                 List<Vector2d> positions = List.of(new Vector2d(1, 1), new Vector2d(3, 1));
                 AbstractWorldMap map1 = new GrassField(10);
-                //AbstractWorldMap map2 = new RectangularMap(7, 7);
+                AbstractWorldMap map2 = new RectangularMap(7, 7);
                 map1.addObserver(new ConsoleMapDisplay());
-                //map2.addObserver(new ConsoleMapDisplay());
+                map2.addObserver(new ConsoleMapDisplay());
                 simulations.add(new Simulation(positions, directions, map1));
-                //simulations.add(new Simulation(positions, directions, map2));
-                SimulationEngine engine = new SimulationEngine(simulations);
-                engine.runAsync();
+                simulations.add(new Simulation(positions, directions, map2));
             }
+            SimulationEngine engine = new SimulationEngine(simulations);
+            engine.runAsyncInThreadPool();
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
