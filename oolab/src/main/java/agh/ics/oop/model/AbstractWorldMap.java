@@ -8,7 +8,7 @@ public abstract class AbstractWorldMap implements WorldMap {
     protected final Map <Vector2d,Animal> animals =  new HashMap<Vector2d,Animal>();
     protected final MapVisualizer mapVisualizer = new MapVisualizer(this);
     protected final List<MapChangeListener>observersList = new ArrayList<>();
-    protected final UUID mapId = UUID.randomUUID();
+    private final UUID mapId = UUID.randomUUID();
 
 
     public boolean canMoveTo(Vector2d position){

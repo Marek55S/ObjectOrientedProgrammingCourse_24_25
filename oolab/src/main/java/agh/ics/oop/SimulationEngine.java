@@ -13,43 +13,33 @@ public class SimulationEngine {
 
     public SimulationEngine(List<Simulation> simulations) {
         simulationsList = simulations;
-        for(Simulation simulation : simulationsList) {
-            threadList.add(new Thread(simulation));
-        }
     }
 
     public void runSync(){
+
         for(Simulation simulation : simulationsList){
             simulation.run();
         }
     }
 
     public void runAsync(){
-        for(int i=0;i<simulationsList.size();i++){
-            threadList.get(i).start();
-        }
-        this.awaitSimulationsEnd();
-    }
-
-    private void awaitSimulationsEnd(){
-        for(int i=0;i<simulationsList.size();i++){
-            try {
-                threadList.get(i).join();
-            }catch (InterruptedException e){
-                Thread.currentThread().interrupt();
-                System.out.println("wątek został przerwany");
-            }
+        for (Simulation simulation : simulationsList) {
+            Thread newThread = new Thread(simulation);
+            threadList.add(newThread);
+            newThread.start();
         }
     }
 
-    private void awaitSimulationsEndForThreadPool(){
-        try{
-            if(!threadPool.awaitTermination(60, TimeUnit.SECONDS)){
-                System.out.println("Wątki zostały zakończone przed wykonaniem wszystkich zadań");
-                threadPool.shutdownNow();
-            }
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+    public void awaitSimulationsEndForRunAsync() throws InterruptedException {
+        for(int i=0;i<simulationsList.size();i++){
+            threadList.get(i).join();
+        }
+    }
+
+    public void awaitSimulationsEndForThreadPool() throws InterruptedException{
+        if(!threadPool.awaitTermination(60, TimeUnit.SECONDS)){
+            System.out.println("Wątki zostały zakończone przed wykonaniem wszystkich zadań");
+            threadPool.shutdownNow();
         }
     }
 
@@ -58,7 +48,6 @@ public class SimulationEngine {
             threadPool.submit(simulation);
         }
         threadPool.shutdown();
-        this.awaitSimulationsEndForThreadPool();
     }
 
 }

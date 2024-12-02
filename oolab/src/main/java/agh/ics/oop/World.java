@@ -21,6 +21,11 @@ public class World {
             }
             SimulationEngine engine = new SimulationEngine(simulations);
             engine.runAsyncInThreadPool();
+            try{
+                engine.awaitSimulationsEndForThreadPool();
+            }catch(InterruptedException e){
+                System.out.println("wątki zostały przerwane przed wykonaniem");
+            }
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
