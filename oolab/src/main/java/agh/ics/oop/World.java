@@ -1,13 +1,14 @@
 package agh.ics.oop;
 
 import agh.ics.oop.model.*;
+import javafx.application.Application;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class World {
     public static void main(String[] args) {
-        try {
+        /*try {
             List<MoveDirection> directions = OptionsParser.parseDirection(args);
             List<Simulation> simulations = new ArrayList<>();
             for(int i=0;i<30;i++) {
@@ -29,7 +30,9 @@ public class World {
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("system zakończył działanie");
+        System.out.println("system zakończył działanie");*/
+        Application.launch(SimulationApp.class,args);
+
     }
 
 }
