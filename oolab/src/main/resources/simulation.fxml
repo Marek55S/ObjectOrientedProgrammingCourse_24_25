@@ -11,7 +11,7 @@
             minHeight="550.0" minWidth="850.0"
             fx:controller="agh.ics.oop.presenter.SimulationPresenter">
     <top>
-        <TextField fx:id="arguments" text="write animal moves here"/>
+        <TextField fx:id="arguments" text="write animal moves here" prefWidth="200"/>
         <Label fx:id="moveDescription" text = "Move description will be here" />
     </top>
     <center>
