@@ -4,13 +4,13 @@ import agh.ics.oop.model.GrassField;
 import agh.ics.oop.model.MoveDirection;
 import agh.ics.oop.model.Vector2d;
 import agh.ics.oop.presenter.SimulationPresenter;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SimulationApp extends Application {
@@ -23,16 +23,17 @@ public class SimulationApp extends Application {
         configureStage(primaryStage, viewRoot);
 
         GrassField map = new GrassField(10);
-        List<Vector2d> startingPositions = List.of(new Vector2d(0, 0), new Vector2d(1, 0), new Vector2d(1, 1));
+        presenter.setWorldMap(map);
+
         //String[] arguments = getParameters().getRaw().toArray(new String[0]);
-        String[] arguments = new String[]{"f","f","r"};
-        List<MoveDirection> directions = OptionsParser.parseDirection(arguments);
+        //String[] arguments = new String[]{"f","f","r"};
+        //String[] arguments = presenter.getArguments();
 
 
         presenter.setWorldMap(map);
         map.addObserver(presenter);
-        Simulation simulation = new Simulation(startingPositions, directions, map);
-        simulation.run();
+        //Simulation simulation = new Simulation(startingPositions, directions, map);
+        //simulation.run();
         primaryStage.show();
     }
 

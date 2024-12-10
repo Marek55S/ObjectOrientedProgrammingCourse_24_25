@@ -11,6 +11,6 @@ public class WorldGUI {
         List<Vector2d> positions = List.of(new Vector2d(1, 1), new Vector2d(3, 1));
         AbstractWorldMap map1 = new GrassField(10);
         map1.addObserver(new ConsoleMapDisplay());*/
-        Application.launch(SimulationApp.class,args);
+        Application.launch(SimulationApp.class);
     }
 }
