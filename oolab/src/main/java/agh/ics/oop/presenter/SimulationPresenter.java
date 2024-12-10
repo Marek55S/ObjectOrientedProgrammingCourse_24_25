@@ -2,9 +2,9 @@ package agh.ics.oop.presenter;
 
 import agh.ics.oop.OptionsParser;
 import agh.ics.oop.Simulation;
-import agh.ics.oop.SimulationApp;
+import agh.ics.oop.SimulationEngine;
 import agh.ics.oop.model.*;
-import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -36,17 +36,19 @@ public class SimulationPresenter implements MapChangeListener {
 
     @Override
     public void mapChanged(WorldMap map, String message) {
-        drawMap();
+        Platform.runLater(() -> {
+            drawMap();
+            moveDescription.setText(message);
+        });
     }
 
-    //zastanow sie czy symulacja ma dodawac caly czas zwierzeta na mape/ ew jak to zmienic
+
     public void onSimulationStartClicked(){
-        List<Vector2d> startingPositions = List.of(new Vector2d(0, 0), new Vector2d(1, 0), new Vector2d(1, 1));
+        List<Vector2d> startingPositions = List.of(new Vector2d(0, 0), new Vector2d(1, 1));
         String[] arguments = getArguments();
-        List<MoveDirection> directions = OptionsParser.parseDirection(arguments);
-        //map.addObserver(presenter);
-        Simulation simulation = new Simulation(startingPositions, directions, map);
-        simulation.run();
+        Simulation simulation = new Simulation(startingPositions, OptionsParser.parseDirection(arguments), map);
+        SimulationEngine engine = new SimulationEngine(List.of(simulation));
+        engine.runAsync();
     }
 
 

@@ -24,16 +24,9 @@ public class SimulationApp extends Application {
 
         GrassField map = new GrassField(10);
         presenter.setWorldMap(map);
-
-        //String[] arguments = getParameters().getRaw().toArray(new String[0]);
-        //String[] arguments = new String[]{"f","f","r"};
-        //String[] arguments = presenter.getArguments();
-
-
         presenter.setWorldMap(map);
         map.addObserver(presenter);
-        //Simulation simulation = new Simulation(startingPositions, directions, map);
-        //simulation.run();
+
         primaryStage.show();
     }
 
