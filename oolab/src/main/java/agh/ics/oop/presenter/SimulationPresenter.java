@@ -43,28 +43,31 @@ public class SimulationPresenter implements MapChangeListener {
     }
 
     private void drawIndexes(){
-        int minWidth = map.getCurrentBounds().LowerLeft().getX()-1;
-        int minHeight = map.getCurrentBounds().LowerLeft().getY()-1;
-        int mapWidth = map.getCurrentBounds().UpperRight().getX()-minWidth;
-        int mapHeight = map.getCurrentBounds().UpperRight().getY()-minHeight;
-        for(int i=minWidth+1;i<mapWidth;i++) mapGrid.add(new Label(String.valueOf(i)),i,minWidth);
-        for(int i=minHeight+1;i<mapHeight;i++) mapGrid.add(new Label(String.valueOf(i)),minHeight,i);
-        mapGrid.add(new Label("y/x"),minWidth,minHeight);
+        int minWidth = map.getCurrentBounds().LowerLeft().getX();
+        int minHeight = map.getCurrentBounds().LowerLeft().getY();
+        int mapWidth = map.getCurrentBounds().UpperRight().getX()-minWidth+1;
+        int mapHeight = map.getCurrentBounds().UpperRight().getY()-minHeight+1;
 
+        for(int i=0;i<mapWidth;i++) mapGrid.add(new Label(String.valueOf(i+minWidth)),i+1,0);
+        for(int i=0;i<mapHeight;i++) mapGrid.add(new Label(String.valueOf(minHeight+mapHeight-1-i)),0,i+1);
+        mapGrid.add(new Label("y/x"),0,0);
 
     }
 
 
     private void drawElements(){
+        int minWidth = map.getCurrentBounds().LowerLeft().getX();
+        int minHeight = map.getCurrentBounds().LowerLeft().getY();
+        int mapHeight = map.getCurrentBounds().UpperRight().getY()-minHeight+1;
         for(WorldElement element : map.getElements()){
-            mapGrid.add(new Label(element.toString()),element.getPosition().getX(),element.getPosition().getY());
+            mapGrid.add(new Label(element.toString()),element.getPosition().getX()-minWidth+1,mapHeight-(element.getPosition().getY()-minHeight-minHeight));
         }
     }
 
     private void drawMap(){
         clearGrid();
-        mapGrid.getColumnConstraints().add(new ColumnConstraints(CELL_WIDTH));
-        mapGrid.getRowConstraints().add(new RowConstraints(CELL_HEIGHT));
+        drawElements();
+        drawIndexes();
     }
 
 
