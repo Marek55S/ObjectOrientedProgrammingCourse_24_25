@@ -6,6 +6,8 @@ import agh.ics.oop.SimulationEngine;
 import agh.ics.oop.model.*;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -42,32 +44,59 @@ public class SimulationPresenter implements MapChangeListener {
         mapGrid.getRowConstraints().clear();
     }
 
-    private void drawIndexes(){
-        int minWidth = map.getCurrentBounds().LowerLeft().getX();
-        int minHeight = map.getCurrentBounds().LowerLeft().getY();
-        int mapWidth = map.getCurrentBounds().UpperRight().getX()-minWidth+1;
-        int mapHeight = map.getCurrentBounds().UpperRight().getY()-minHeight+1;
+    private void drawIndices(int minWidth, int minHeight, int mapWidth, int mapHeight) {
+        for(int i=0;i<mapWidth;i++){
+            Label index = new Label(String.valueOf(i+minWidth));
+            mapGrid.add(index,i+1,0);
+            GridPane.setHalignment(index, HPos.CENTER);
 
-        for(int i=0;i<mapWidth;i++) mapGrid.add(new Label(String.valueOf(i+minWidth)),i+1,0);
-        for(int i=0;i<mapHeight;i++) mapGrid.add(new Label(String.valueOf(minHeight+mapHeight-1-i)),0,i+1);
-        mapGrid.add(new Label("y/x"),0,0);
+        }
+        for(int i=0;i<=mapHeight;i++){
+            Label index = new Label(String.valueOf(mapHeight - i + minHeight - 1));
+            mapGrid.add(index,0,i+1);
+            GridPane.setHalignment(index, HPos.CENTER);
+        }
 
+        Label axisDsc = new Label("y/x");
+        mapGrid.add(axisDsc,0,0);
+        GridPane.setHalignment(axisDsc, HPos.CENTER);
     }
 
-
-    private void drawElements(){
-        int minWidth = map.getCurrentBounds().LowerLeft().getX();
-        int minHeight = map.getCurrentBounds().LowerLeft().getY();
-        int mapHeight = map.getCurrentBounds().UpperRight().getY()-minHeight+1;
-        for(WorldElement element : map.getElements()){
-            mapGrid.add(new Label(element.toString()),element.getPosition().getX()-minWidth+1,mapHeight-(element.getPosition().getY()-minHeight-minHeight));
+    private void alignCells(int mapWidth, int mapHeight) {
+        for (int i = 0; i <= mapWidth; i++) {
+            mapGrid.getColumnConstraints().add(new ColumnConstraints(CELL_WIDTH));
+        }
+        for (int i = 0; i <= mapHeight+1; i++) {
+            mapGrid.getRowConstraints().add(new RowConstraints(CELL_HEIGHT));
         }
     }
 
+    private void drawElements(int minWidth, int minHeight, int mapHeight) {
+        for(WorldElement element : map.getElements()){
+            WorldElement correctObject = map.objectAt(element.getPosition());
+            Label elem = new Label(correctObject.toString());
+            mapGrid.add(elem,correctObject.getPosition().getX()-minWidth+1,mapHeight-(correctObject.getPosition().getY()-minHeight-1));
+            GridPane.setHalignment(elem, HPos.CENTER);
+        }
+    }
+
+
     private void drawMap(){
+        mapGrid.setAlignment(Pos.CENTER);
         clearGrid();
-        drawElements();
-        drawIndexes();
+
+        int minWidth = map.getCurrentBounds().LowerLeft().getX();
+        int minHeight = map.getCurrentBounds().LowerLeft().getY();
+        int mapWidth = map.getCurrentBounds().UpperRight().getX()-minWidth+1;
+        int mapHeight = map.getCurrentBounds().UpperRight().getY()-minHeight;
+
+
+        drawIndices(minWidth,minHeight,mapWidth,mapHeight);
+
+        drawElements(minWidth,minHeight,mapHeight);
+
+        alignCells(mapWidth,mapHeight);
+
     }
 
 
@@ -81,7 +110,7 @@ public class SimulationPresenter implements MapChangeListener {
 
 
     public void onSimulationStartClicked(){
-        List<Vector2d> startingPositions = List.of(new Vector2d(0, 0), new Vector2d(1, 1));
+        List<Vector2d> startingPositions = List.of(new Vector2d(0, 0), new Vector2d(10, 1));
         String[] arguments = getArguments();
         Simulation simulation = new Simulation(startingPositions, OptionsParser.parseDirection(arguments), map);
         SimulationEngine engine = new SimulationEngine(List.of(simulation));
