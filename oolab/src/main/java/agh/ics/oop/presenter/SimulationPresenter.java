@@ -6,15 +6,20 @@ import agh.ics.oop.SimulationEngine;
 import agh.ics.oop.model.*;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class SimulationPresenter implements MapChangeListener {
@@ -109,13 +114,35 @@ public class SimulationPresenter implements MapChangeListener {
     }
 
 
-    public void onSimulationStartClicked(){
+    public void onSimulationStartClicked() throws Exception {
         List<Vector2d> startingPositions = List.of(new Vector2d(0, 0), new Vector2d(10, 1));
         String[] arguments = getArguments();
         Simulation simulation = new Simulation(startingPositions, OptionsParser.parseDirection(arguments), map);
         SimulationEngine engine = new SimulationEngine(List.of(simulation));
-        engine.runAsync();
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getClassLoader().getResource("simulation.fxml"));
+        BorderPane viewRoot = loader.load();
+        SimulationPresenter presenter = loader.getController();
+
+        Stage simulationStage = new Stage();
+        configureStage(simulationStage,viewRoot);
+
+        GrassField newMap = new GrassField(10);
+        presenter.setWorldMap(newMap);
+        newMap.addObserver(presenter);
+
+        simulationStage.show();
+
+        engine.runAsyncInThreadPool();
     }
 
+    private void configureStage(Stage primaryStage, BorderPane viewRoot) {
+        var scene = new Scene(viewRoot);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Simulation");
+        primaryStage.minWidthProperty().bind(viewRoot.minWidthProperty());
+        primaryStage.minHeightProperty().bind(viewRoot.minHeightProperty());
+    }
 
 }
