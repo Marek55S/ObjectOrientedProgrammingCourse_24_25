@@ -18,15 +18,17 @@ import javafx.scene.layout.RowConstraints;
 import java.util.List;
 
 public class SimulationPresenter implements MapChangeListener {
-    public WorldMap map;
-    public Label moveDescription;
-    public Button startButton;
-    public GridPane mapGrid;
+    private WorldMap map;
     public static double CELL_WIDTH = 20;
     public static double CELL_HEIGHT = 30;
 
     @FXML
-    private Label infoLabel;
+    private Label moveDescription;
+    @FXML
+    private Button startButton;
+    @FXML
+    private GridPane mapGrid;
+
     @FXML
     private TextField arguments;
 
@@ -52,7 +54,7 @@ public class SimulationPresenter implements MapChangeListener {
 
         }
         for(int i=0;i<=mapHeight;i++){
-            Label index = new Label(String.valueOf(mapHeight - i + minHeight - 1));
+            Label index = new Label(String.valueOf(mapHeight - i + minHeight));
             mapGrid.add(index,0,i+1);
             GridPane.setHalignment(index, HPos.CENTER);
         }
