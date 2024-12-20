@@ -1,6 +1,7 @@
 package agh.ics.oop;
 
 import agh.ics.oop.model.*;
+import javafx.application.Application;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,17 +20,20 @@ public class World {
                 simulations.add(new Simulation(positions, directions, map1));
                 simulations.add(new Simulation(positions, directions, map2));
             }
-            SimulationEngine engine = new SimulationEngine(simulations);
+            /*SimulationEngine engine = new SimulationEngine(simulations);
             engine.runAsyncInThreadPool();
             try{
                 engine.awaitSimulationsEndForThreadPool();
             }catch(InterruptedException e){
                 System.out.println("wątki zostały przerwane przed wykonaniem");
-            }
+            }*/
+            simulations.getFirst().run();
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
         System.out.println("system zakończył działanie");
+        //Application.launch(SimulationApp.class,args);
+
     }
 
 }

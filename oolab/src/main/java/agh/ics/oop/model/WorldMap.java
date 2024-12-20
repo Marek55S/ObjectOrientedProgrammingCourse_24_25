@@ -47,4 +47,5 @@ public interface WorldMap extends MoveValidator {
 
     UUID getID();
 
+    Boundary getCurrentBounds();
 }

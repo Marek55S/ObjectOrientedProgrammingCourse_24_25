@@ -29,13 +29,19 @@ public class Simulation implements Runnable {
         return animalsList;
     }
 
+    //zastanow sie czy nie lapac tego w innym miejscu
     @Override
-    public void run(){
+    public void run() {
         int numberOfAnimals = animalsList.size();
-        for(int i = 0;i<movesList.size();i++){
-            int animalNumber = i%numberOfAnimals;
+        for (int i = 0; i < movesList.size(); i++) {
+            int animalNumber = i % numberOfAnimals;
             map.move(animalsList.get(animalNumber), movesList.get(i));
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
         }
     }
-
 }
