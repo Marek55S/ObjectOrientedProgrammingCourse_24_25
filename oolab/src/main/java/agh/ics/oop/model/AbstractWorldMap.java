@@ -51,6 +51,12 @@ public abstract class AbstractWorldMap implements WorldMap {
         return new ArrayList<>(animals.values());
     }
 
+    public Collection<Animal> getOrderedAnimals() {
+        List<Animal> sortedAnimals = new ArrayList<>(animals.values());
+        sortedAnimals.sort(Comparator.comparing((Animal animal) ->animal.getPosition().getX()).thenComparing((Animal animal) ->animal.getPosition().getY()));
+        return sortedAnimals;
+    }
+
     public abstract Boundary getCurrentBounds();
 
     public void addObserver(MapChangeListener observer) {

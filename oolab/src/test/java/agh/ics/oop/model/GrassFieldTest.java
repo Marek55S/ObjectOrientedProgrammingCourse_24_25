@@ -2,7 +2,9 @@ package agh.ics.oop.model;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -181,6 +183,31 @@ class GrassFieldTest {
         assertEquals(new Vector2d(7,8),secondMapBounds.UpperRight());
         assertEquals(new Vector2d(0,-1),secondMapBounds.LowerLeft());
 
+    }
+
+    @Test
+    void getOrderedAnimalsTest(){
+        //given
+        GrassField defaultMap = new GrassField(5);
+        Animal animal1 = new Animal(new Vector2d(7,7));
+        Animal animal2 = new Animal(new Vector2d(0,0));
+        Animal animal3 = new Animal(new Vector2d(0,-1));
+        Animal animal4 = new Animal(new Vector2d(3,8));
+
+        List<Animal> inputAnimals = List.of(animal1,animal2,animal3,animal4);
+        List<Animal> correcrOrder = List.of(animal3,animal2,animal4,animal1);
+
+        //when
+        try {
+            for(Animal animal : inputAnimals){
+                defaultMap.place(animal);
+            }
+        }catch (IncorrectPositionException e) {
+            fail(e.getMessage() + " exception should not be thrown");}
+        Collection<Animal> recievedAnimals = defaultMap.getOrderedAnimals();
+        //then
+        assertEquals(correcrOrder,recievedAnimals);
+        assertNotEquals(inputAnimals,recievedAnimals);
     }
 
 
