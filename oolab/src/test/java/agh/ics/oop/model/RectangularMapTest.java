@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -123,8 +124,9 @@ class RectangularMapTest {
             fail(e.getMessage() + " exception should not be thrown");
         }
         //then
-        assertEquals(animal1,defaultMap.objectAt(new Vector2d(2,2)));
-        assertEquals(animal2,defaultMap.objectAt(new Vector2d(3,3)));
+        assertEquals(Optional.of(animal1),defaultMap.objectAt(new Vector2d(2,2)));
+        assertEquals(Optional.of(animal2),defaultMap.objectAt(new Vector2d(3,3)));
+        assertFalse(defaultMap.objectAt(new Vector2d(4,4)).isPresent());
     }
 
     //ufam, że MapVisualizer działa poprawnie

@@ -1,6 +1,9 @@
 package agh.ics.oop.model;
 
+
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class GrassField extends AbstractWorldMap implements WorldMap{
     private final Map<Vector2d,Grass> grassMap = new HashMap<Vector2d,Grass>();
@@ -37,11 +40,9 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
 
 
     @Override
-    public WorldElement objectAt(Vector2d position) {
-        if (super.objectAt(position) == null) {
-            return grassMap.get(position);
-        }
-        else{ return super.objectAt(position); }
+    public Optional<WorldElement> objectAt(Vector2d position) {
+        if (animals.containsKey(position)) return super.objectAt(position);
+        else return Optional.ofNullable(grassMap.get(position));
     }
 
     private void findMapBound(){
@@ -62,9 +63,8 @@ public class GrassField extends AbstractWorldMap implements WorldMap{
 
     @Override
     public Collection<WorldElement> getElements(){
-        Collection<WorldElement> elements = super.getElements();
-        elements.addAll(grassMap.values());
-        return elements;
+        return Stream.concat(animals.values().stream(),grassMap.values().stream())
+                .collect(Collectors.toList());
     }
 
 

@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
 import java.util.List;
+import java.util.Optional;
 
 public class SimulationPresenter implements MapChangeListener {
     private WorldMap map;
@@ -75,9 +76,8 @@ public class SimulationPresenter implements MapChangeListener {
 
     private void drawElements(int minWidth, int minHeight, int mapHeight) {
         for(WorldElement element : map.getElements()){
-            WorldElement correctObject = map.objectAt(element.getPosition());
-            Label elem = new Label(correctObject.toString());
-            mapGrid.add(elem,correctObject.getPosition().getX()-minWidth+1,mapHeight-(correctObject.getPosition().getY()-minHeight-1));
+            Label elem = new Label(element.toString());
+            mapGrid.add(elem,element.getPosition().getX()-minWidth+1,mapHeight-(element.getPosition().getY()-minHeight-1));
             GridPane.setHalignment(elem, HPos.CENTER);
         }
     }

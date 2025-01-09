@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -114,7 +115,6 @@ class GrassFieldTest {
         assertTrue(defaultMap.isOccupied(grassPosition));
     }
 
-    // cos nie dziala, zastanow sie jak sprawdzac ta pozal sie boze trawe
     @Test
     void objectAtTest(){
         //given
@@ -139,10 +139,10 @@ class GrassFieldTest {
         fail(e.getMessage() + " exception should not be thrown");}
 
         //then
-        assertEquals(animal1,defaultMap.objectAt(animal1.getPosition()));
-        assertEquals(animal2,defaultMap.objectAt(animal2.getPosition()));
+        assertEquals(Optional.of(animal1),defaultMap.objectAt(animal1.getPosition()));
+        assertEquals(Optional.of(animal2),defaultMap.objectAt(animal2.getPosition()));
         assertNotNull(defaultMap.objectAt(grassPosition));
-        assertNull(defaultMap.objectAt(emptyCell));
+        assertFalse(defaultMap.objectAt(emptyCell).isPresent());
     }
 
     @Test

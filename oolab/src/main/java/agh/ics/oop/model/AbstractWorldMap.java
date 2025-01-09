@@ -38,8 +38,13 @@ public abstract class AbstractWorldMap implements WorldMap {
         }
     }
 
-    public WorldElement objectAt(Vector2d position){
-        return animals.get(position);
+    public Optional<WorldElement> objectAt(Vector2d position){
+        if(animals.containsKey(position)){
+            return Optional.of(animals.get(position));
+        }
+        else{
+            return Optional.empty();
+        }
     }
 
     public  String toString(){
@@ -52,9 +57,10 @@ public abstract class AbstractWorldMap implements WorldMap {
     }
 
     public Collection<Animal> getOrderedAnimals() {
-        List<Animal> sortedAnimals = new ArrayList<>(animals.values());
-        sortedAnimals.sort(Comparator.comparing((Animal animal) ->animal.getPosition().getX()).thenComparing((Animal animal) ->animal.getPosition().getY()));
-        return sortedAnimals;
+        return animals.values().stream()
+                .sorted(Comparator.comparing((Animal animal) ->animal.getPosition().getX())
+                        .thenComparing(animal ->animal.getPosition().getY()))
+                .toList();
     }
 
     public abstract Boundary getCurrentBounds();
