@@ -16,9 +16,5 @@ interface WorldMap {
 
     val elements: Collection<Animal>
 
-    val orderedAnimals: Collection<Animal>
 
-    val id: UUID
-
-    val currentBounds: Boolean
 }
