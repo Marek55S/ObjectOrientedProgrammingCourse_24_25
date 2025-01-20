@@ -15,13 +15,13 @@ class Animal(private var position: Vector2d = Vector2d(2, 2),private var orienta
             MoveDirection.RIGHT -> orientation = orientation.next()
             MoveDirection.LEFT -> orientation = orientation.previous()
             MoveDirection.FORWARD -> {
-                val newPosition = position + orientation.unitVector
+                val newPosition = position + orientation.toUnitVector()
                 if (validator.canMoveTo(newPosition)) {
                     position = newPosition
                 }
             }
             MoveDirection.BACKWARD -> {
-                val newPosition = position - orientation.unitVector
+                val newPosition = position - orientation.toUnitVector()
                 if (validator.canMoveTo(newPosition)) {
                     position = newPosition
                 }

@@ -1,10 +1,10 @@
 package org.example.model
 
-enum class MapDirection(val unitVector: Vector2d) {
-    NORTH(Vector2d(0, 1)),
-    EAST(Vector2d(1, 0)),
-    SOUTH(Vector2d(0, -1)),
-    WEST(Vector2d(-1, 0));
+enum class MapDirection() {
+    NORTH,
+    EAST,
+    SOUTH,
+    WEST;
 
 
 
