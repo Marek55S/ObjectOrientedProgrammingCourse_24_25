@@ -16,7 +16,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
 import java.util.List;
-import java.util.Optional;
 
 public class SimulationPresenter implements MapChangeListener {
     private WorldMap map;

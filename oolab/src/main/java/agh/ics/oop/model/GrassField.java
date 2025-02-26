@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class GrassField extends AbstractWorldMap implements WorldMap{
-    private final Map<Vector2d,Grass> grassMap = new HashMap<Vector2d,Grass>();
+    private final Map<Vector2d,Grass> grassMap = new HashMap<>();
     private Vector2d grassBoundUpperRight;
     private Vector2d grassBoundLowerLeft;
     private Vector2d mapUpperRight;
